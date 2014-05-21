@@ -25,6 +25,18 @@ class Coupon < ActiveRecord::Base
     end
   end
   
+  def self.send_survey_message(phones)
+    i = 0
+    # receivers = Coupon.joins(:user).includes(:user).where("users.phone" => User.user_120)
+    # receivers = Coupon.used.joins(:user).includes(:user).where("users.phone" => User.coupon_users)
+    phones.each do |phone|
+      Message.send_120_survey_to(phone)
+      i += 1
+      puts i.to_s + "/" + phone
+    end
+  end
+  
+  
   def random_code
     alphabet = %w(a b c d e f g h i j k l m n o p q r s t u v w x y z) * 3
     digit = %w(1 2 3 4 5 6 7 8 9 0) * 2

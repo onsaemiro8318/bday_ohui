@@ -36,6 +36,101 @@ class Message < ActiveRecord::Base
     return message
   end
   
+  def self.send_survey_to(user)
+    message = self.new
+    message.send_phone = Rails.application.secrets.send_phone
+    message.dest_phone = user.phone 
+    message.msg_body = self.send_survey(user)
+    message.subject = "Skin Birthday"
+    message.send_name = user.name
+    message.sent_at = Time.now + 2.seconds
+    message.save
+    message.user = user
+    message.save
+    result = message.send_lms
+    message.cmid = result["cmid"]
+    message.result = result["result_code"]
+    return message
+  end
+  
+  def self.send_survey(user)
+    "
+"+user.name+"님,
+숨37 Skin Birthday
+이벤트에 참여해주셔서 감사합니다!
+
+더 좋은 이벤트를 위해,
+간단한 설문에 답변 부탁드려요^^
+
+설문링크 >
+https://birthday.su-m37.co.kr/survey?p="+user.phone+"
+
+감사합니다!
+수신거부: 080-863-5542
+"
+  end
+  
+  def self.send_120_survey(phone)
+    "
+숨37 Skin Birthday
+이벤트에 참여해주셔서 감사합니다!
+
+더 좋은 이벤트를 위해,
+간단한 설문에 답변 부탁드려요^^
+
+설문링크 >
+https://birthday.su-m37.co.kr/survey?p="+phone+"
+
+감사합니다!
+수신거부: 080-863-5542
+"
+  end
+  
+  def self.send_080
+"수신거부: 080-863-5542"
+  end
+  
+  def self.send_080_to_today
+    messages = Message.where(created_at:[Time.now.beginning_of_day..Time.now.end_of_day]).where("user_id is not null")
+    messages.each do |m|
+      Message.send_080_to(m.send_phone, m.dest_phone)
+    end
+  end
+  
+  def self.send_080_to(send_phone, dest_phone)
+    message = self.new
+    message.send_phone = send_phone
+    message.dest_phone = dest_phone 
+    message.msg_body = self.send_080
+    # message.subject = "Skin Birthday"
+    # message.send_name = user.name
+    message.sent_at = Time.now + 2.seconds
+    message.save
+    # message.user = user
+    message.save
+    result = message.send_sms
+    message.cmid = result["cmid"]
+    message.result = result["result_code"]
+    return message
+  end
+  
+  def self.send_120_survey_to(phone)
+    message = self.new
+    message.send_phone = Rails.application.secrets.send_phone
+    message.dest_phone = phone 
+    message.msg_body = self.send_120_survey(phone)
+    message.subject = "Skin Birthday"
+    # message.send_name = user.name
+    message.sent_at = Time.now + 2.seconds
+    message.save
+    # message.user = user
+    message.save
+    result = message.send_lms
+    message.cmid = result["cmid"]
+    message.result = result["result_code"]
+    return message
+  end
+  
   def self.send_retention(coupon)
     "
 서둘러주세요!
@@ -79,6 +174,35 @@ class Message < ActiveRecord::Base
 "
 
   end
+  
+  def send_sms
+    url = "http://api.openapi.io/ppurio/1/message/sms/minivertising"
+    api_key = Rails.application.secrets.apistore_key
+    time = (Time.now + 1.seconds)
+    res = RestClient.post(url,
+      {
+        "send_time" => time.strftime("%Y%m%d%H%M%S"), 
+        "dest_phone" => self.dest_phone, 
+        "dest_name" => "LG",
+        "send_phone" => self.send_phone, 
+        "send_name" => self.send_name,
+        "subject" => self.subject,
+        "apiVersion" => "1",
+        "id" => "minivertising",
+        "msg_body" => self.msg_body
+      },
+      content_type: 'multipart/form-data',
+      'x-waple-authorization' => api_key
+    )
+    parsed_result = JSON.parse(res)
+    cmid = parsed_result["cmid"]
+    call_status = String.new
+    start = Time.new
+    during_time = 0
+    puts res
+    return JSON.parse(res)
+  end
+  
   
   def send_lms
     url = "http://api.openapi.io/ppurio/1/message/lms/minivertising"
