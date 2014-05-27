@@ -15,7 +15,7 @@ namespace :load do
     set :unicorn_error_log, -> { "#{shared_path}/log/unicorn.err.log" }
     set :unicorn_user, -> { fetch(:user) }
     set :unicorn_workers, 5
-    set :unicorn_rack_env, -> { fetch(:rails_env) == 'production' ? 'production' : 'staging' }
+    set :unicorn_rack_env, -> { fetch(:rails_env) }# == 'production' ? 'production' : 'staging' }
   end
 end
 
@@ -85,26 +85,26 @@ end
 namespace :unicorn do
   desc "Setup Unicorn initializer and app configuration"
   task :setup do
-    # on roles :app do |host|
-    #   execute "mkdir -p #{shared_path}/config"
-    #   execute "mkdir -p #{shared_path}/tmp/pids"
-    #   execute "mkdir -p #{shared_path}/log"
-    #   template "unicorn.rb.erb", fetch(:unicorn_config)
-    #   template "unicorn_init.erb", "/tmp/unicorn_init"
-    #   execute "chmod +x /tmp/unicorn_init"
-    #   execute :sudo, :cp, "/tmp/unicorn_init /etc/init.d/unicorn_#{fetch(:application)}"
-    #   execute :rm, "/tmp/unicorn_init"
-    # end
-    # on roles :wep do
-    #   execute "mkdir -p #{shared_path}/config"
-    #   execute "mkdir -p #{shared_path}/tmp/pids"
-    #   execute "mkdir -p #{shared_path}/log"
-    #   template "unicorn.rb.erb", fetch(:unicorn_config)
-    #   template "unicorn_init.erb", "/tmp/unicorn_init"
-    #   execute "chmod +x /tmp/unicorn_init"
-    #   execute :sudo, :cp, "/tmp/unicorn_init /etc/init.d/unicorn_#{fetch(:application)}"
-    #   execute :rm, "/tmp/unicorn_init"
-    # end
+    on roles :app do |host|
+      execute "mkdir -p #{shared_path}/config"
+      execute "mkdir -p #{shared_path}/tmp/pids"
+      execute "mkdir -p #{shared_path}/log"
+      template "unicorn.rb.erb", fetch(:unicorn_config)
+      template "unicorn_init.erb", "/tmp/unicorn_init"
+      execute "chmod +x /tmp/unicorn_init"
+      execute :sudo, :cp, "/tmp/unicorn_init /etc/init.d/unicorn_#{fetch(:application)}"
+      execute :rm, "/tmp/unicorn_init"
+    end
+    on roles :wep do
+      execute "mkdir -p #{shared_path}/config"
+      execute "mkdir -p #{shared_path}/tmp/pids"
+      execute "mkdir -p #{shared_path}/log"
+      template "unicorn.rb.erb", fetch(:unicorn_config)
+      template "unicorn_init.erb", "/tmp/unicorn_init"
+      execute "chmod +x /tmp/unicorn_init"
+      execute :sudo, :cp, "/tmp/unicorn_init /etc/init.d/unicorn_#{fetch(:application)}"
+      execute :rm, "/tmp/unicorn_init"
+    end
   end
   
   %w[start stop restart].each do |command|
