@@ -1,8 +1,8 @@
 # config valid only for Capistrano 3.1
 lock '3.1.0'
 
-set :application, 'bday'
-set :repo_url, 'git@github.com:onesup/bday37.git'
+set :application, 'bday_june'
+set :repo_url, 'git@github.com:onesup/bday_june.git'
 set :scm_user, "onesup"
 
 
