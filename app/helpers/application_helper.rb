@@ -17,7 +17,7 @@ module ApplicationHelper
   
   def months_option_helper
     today = Time.now
-    (today.month..5).to_a
+    (today.month..7).to_a
   end
   
   def week_paginate_next(current_page,link_path)
