@@ -37,7 +37,7 @@ Rails.application.routes.draw do
     get 'unique_error' => 'home#unique_error'
     get 'terms' => 'home#terms'
     get 'product' => 'home#product'
-    resources :users, only: [:new]
+    resources :users
   end
   
   resources :viral_actions
