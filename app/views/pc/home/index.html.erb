@@ -1,9 +1,5 @@
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
   <div class="contain">
-      <div class="header"> <!-- Header -->
-        <%= image_tag("pc/logo.png", class: "header_logo") %>
-        <%= image_tag("pc/term.png", class: "header_term") %>
-      </div>
       <div class="content"> <!-- Content -->
         <div class="c_title">
 		        <%= image_tag("pc/title.png", class: "content_title") %>
@@ -13,31 +9,25 @@
             <%= image_tag "pc/button.png" %>
           <% end %>
         </div>
-	      <div class="label_2">
-          <%= image_tag "pc/label_2.png" %>
-        </div>
-        <div class="share">
-          <a href="#" id="blog_share_link">
-            <%= image_tag("pc/share_blog.png", class: "share_icon_b") %>
-          </a>			
-          <a href="#" onclick="alert('아쉽네요!\n다음엔 조금더 서둘러주세요~');">
-            <%= image_tag("pc/share_twitter.png", class: "share_icon_t") %>
-          </a>
-          <a href="#" id="facebook_share_link">
-            <%= image_tag("pc/share_facebook.png", class: "share_icon_f") %>
-          </a>
-              
-        </div>
-      </div>
-      <div class="video"> <!-- Video -->
-        <div class="video_labelarea">
-		      <%= image_tag("pc/vedio_label.png", class: "video_label") %>
-          <%= link_to "#popup_product", {id: "product_button"} do %>
+		<div class="share_block">
+          <%= link_to "#popup_product", {id: "product_button", class:"view_p"} do %>
             <%= image_tag("pc/vedio_button.png", class: "video_button") %>
           <% end %>
-		    </div>
-          <iframe class="youtube_iframe" width="640" height="390" src="//www.youtube.com/embed/bax4BgeYnGI?wmode=opaque" frameborder="0" allowfullscreen></iframe>
-        </div>
+
+          <a href="#" id="blog_share_link" class="s_blog">
+            <%= image_tag("pc/share_blog.png", class: "share_icon_b") %>
+          </a>			
+          <a href="#" onclick="alert('아쉽네요!\n다음엔 조금더 서둘러주세요~');" class="s_tw">
+            <%= image_tag("pc/share_twitter.png", class: "share_icon_t") %>
+          </a>
+          <a href="#" id="facebook_share_link" class="s_fb">
+            <%= image_tag("pc/share_facebook.png", class: "share_icon_f") %>
+          </a>
+		</div>
+		<div class="product_new">
+         	<%= image_tag("pc/product_new.png", class: "pro_new") %>
+		</div>
+      </div>
         <!-- popup -->
         <div id="popup_info">
           <div>
@@ -192,7 +182,11 @@
     </div>	  
   </div>
 <div class="footer_custom"> <!-- Caution -->
-	<%= image_tag "pc/caution.png" %>
+	<div class="inner">
+          <%= link_to "#popup_qna", {id: "qna_button", class:"btn_qna"} do %>
+            <%= image_tag("pc/btn_qna.png") %>
+          <% end %>
+	</div>
 </div>
 <%= render "popup_personal"%>
 <%= render "popup_fin1" %>

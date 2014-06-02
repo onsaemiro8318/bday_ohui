@@ -4,10 +4,15 @@ styles.cssa{
 img{
   border: 0;
 }
+*{
+	padding:0;
+	margin:0;
+}
 
 .body_class{
-  background-color: #d4e5e9;
   margin: 0;
+  padding:0;
+  background: asset-url("pc/bg_repeat.png") top;
   background-repeat: repeat-x;
 }
 
@@ -16,32 +21,20 @@ img{
   width: 810px;
   left: 50%;
   margin-left: -405px;
-}
-
-.header{
-  margin-top: 32px;
-  padding-left:20px;
-}
-
-.haeder_logo{
-  float: left;
-}
-
-.header_term{
-  float: right;
+  background: asset-url("pc/backimg3.png") no-repeat 0 0;  
 }
 .content{
-  margin-top: 64px;
+  padding-top: 64px;
   text-align: center;
-  background: asset-url("pc/backimg2.png") no-repeat 30px 160px;
 }
 
 .c_title{
-	padding-bottom:20px;
+	padding:30px 0 25px;
+	text-align: center;
 }
 
 .btn_event{
-	padding-bottom:456px;
+	padding-bottom:430px;
 }
 
 .content_title{
@@ -52,29 +45,45 @@ img{
 	padding-bottom:20px;
 }
 
+.share_block{
+    margin:0 auto;
+    background-image: asset-url("pc/btn_middle.png");
+    width:719px;
+    height:154px;	
+	position:relative;
+}
+.share_block a{
+	display:block;
+    position:absolute;
+	width:43px;
+	height:43px;
+}
+.share_block a.view_p{
+	top:84px;
+	left:47px;
+	width:112px;
+	height:33px;
+}
+.share_block a.s_blog{
+	top:67px;
+	right:50px;
+}
+.share_block a.s_tw{
+	top:67px;
+	right:100px;
+}
+.share_block a.s_fb{
+	top:67px;
+	right:148px;
+}
+
+
 .share{
   margin:0 auto;
   background-image: asset-url("pc/share_btn_bg.png");
   width:301px;
   height:43px;
 
-}
-
-.share_icon_f{
-  margin-top: 7px;
-  margin-right: 22px;
-  float: right;
-}
-
-.share_icon_t{
-  margin-top: 8px;
-  margin-right: 21px;
-  float: right;
-}
-.share_icon_b{
-  margin-top: 10px;
-  margin-right: 25px;
-  float: right;
 }
 
 .product{
@@ -324,13 +333,23 @@ img{
 
 .footer_custom{
   width: 100%;
-  background-color: #C5D6DA;
+  background-color: #c0dbe6;
   text-align: center;
 }
-
-.youtube_iframe{
-  margin-left: 36px;
+.footer_custom .inner{
+ background: asset-url("pc/caution.png") top center no-repeat; 
+ margin:0 auto;
+ width:810px;
+ height:373px;
+ position:relative;
 }
+.footer_custom .inner a{
+	position:absolute;
+	display:block;
+	top:263px;
+	left:335px;
+}
+
 
 span.customSelect {
     font:12px sans-serif;
