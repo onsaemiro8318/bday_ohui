@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   
   namespace :pc do
     get 'index' => 'home#index'
-    # resources :users, only: [:create]
+    resources :users, only: [:create]
   end
   
   namespace :mobile do
@@ -37,7 +37,7 @@ Rails.application.routes.draw do
     get 'unique_error' => 'home#unique_error'
     get 'terms' => 'home#terms'
     get 'product' => 'home#product'
-    # resources :users, only: [:new]
+    resources :users, only: [:new]
   end
   
   resources :viral_actions
@@ -53,7 +53,7 @@ Rails.application.routes.draw do
   get "/:code", to:"coupons#show", contraints:{code: /[a-z]{5}-\d{4}/}, as: "coupon"
   get "/:code/edit", to:"coupons#edit", contraints:{code: /[a-z]{5}-\d{4}/}, as: "edit_coupon"
   put "/:code", to:"coupons#update", contraints:{code: /[a-z]{5}-\d{4}/}, as: "update_coupon"
-  # resources :users
+  resources :users
   devise_for :users
   resources :coupons, except: [:update, :edit, :show] do
   end
