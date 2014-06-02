@@ -1,41 +1,40 @@
-<div id="main">
-	<div class="header">
-		<div class="top clearfix">
-			<div class="clearfix">
-				<div class="container-logo">
-					<a href="/"><%= image_tag("mobile/logo.png", class:"logo") %></a>
+<div class="top">
+	
+	<div id="main">
+			
+				<div class="title">
+					<%= image_tag("mobile/new/title.png", class:"title_img") %>
 				</div>
-				<div class="event-date">
-					<%= image_tag("mobile/text_event-date.png", class:"event-datess") %>
+			
+				<div class="container-btn_gift clearfix">
+					<%#= link_to new_mobile_user_path, {onclick:"ga('send', 'event', 'button', 'click', 'm 생일 선물 받기');", id:"gift_button"} do %>
+					<%= link_to "#", id:"gift_button" do%>
+					<%= image_tag("mobile/new/btn_birth.png", class:"btn_gift") %>
+					<% end %>
 				</div>
-			</div>
-			<div class="title">
-				<%= image_tag("mobile/text_tagline.png", class:"tagline") %>
-			</div>
-			<div class="container-btn_gift">
-				<%#= link_to new_mobile_user_path, {onclick:"ga('send', 'event', 'button', 'click', 'm 생일 선물 받기');", id:"gift_button"} do %>
-				<%= link_to "#", id:"gift_button" do%>
-				<%= image_tag("mobile/btn_gift.png", class:"btn_gift") %>
-				<% end %>
-			</div>
-			<div class="container-product">
-				<%= image_tag("mobile/product.png", class:"product") %>
+			
+				<div class="container-product">
+					<%= image_tag("mobile/new/img_product.png", class:"product") %>
+				</div>
+				<div class="container-view">
+					<a href="/mobile/product"  class="container-product-detail"><%= image_tag("mobile/new/btn_view.png", class:"btn_product-detail") %></a>
+					<%= image_tag("mobile/new/img_view.png", class:"view_bg") %>
+				</div>
+	</div>
+
+</div>
+
+<div class="middle">
+			<div class="container-sub_title">
+				<%= image_tag("mobile/new/sub_title.png", class:"sub_title") %>
 			</div>
       
 			<div class="container-sns">
-				<%= image_tag("mobile/text_sns.png", class:"text_sns") %>
 				<a href="#" id="kakaotalk_share_link"><%= image_tag("mobile/btn_kakaotalk.png", class:"btn_kakaotalk") %></a>
 				<a href="#" id="kakaostory_share_link"><%= image_tag("mobile/btn_kakaostory.png", class:"btn_kakaostory") %></a>
 				<a href="#" id="facebook_share_link"><%= image_tag("mobile/btn_facebook.png", class:"btn_facebook") %></a>
 			</div>
       
-			<div class="container-promotion">
-				<div class="clearfix">
-					<%= image_tag("mobile/text_screte-programming-essence.png", class:"text_screte-programming-essence") %>
-					<a href="/mobile/product"  class="container-product-detail"><%= image_tag("mobile/btn_product-detail.png", class:"btn_product-detail") %></a>
-				</div>
-				<iframe width="300" height="210" src="//www.youtube.com/embed/bax4BgeYnGI" frameborder="0" allowfullscreen class="video"></iframe>
-			</div>
 	  
 			<div class="container-sum-sns clearfix">
 				<div class="left">
@@ -52,9 +51,8 @@
 					</a>
 				</div>
 			</div>
-		</div>
-	</div>
 </div>
+
 <div class="footer">
 	<div class="wrapper-background">
 		<p class=first>

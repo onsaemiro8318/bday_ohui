@@ -1,17 +1,11 @@
-/*----------------------------------------------------
-* Author: Dongju Seo (geekerati@geekerati.me)
-* Date: March 10, 2014
-*----------------------------------------------------*/
-
 /*-----------------------------------------------------
 * Reset & Base
 *----------------------------------------------------*/
 *, body, div, ul, li {margin:0;padding:0;}
 a {text-decoration: none;}
 div {position:relative;}
-image {border:0}
+img {border:0}
 
-body{background: #d4e5e9;}
 .clearfix:after {
   visibility: hidden;
   display: block;
@@ -49,218 +43,77 @@ body{background: #d4e5e9;}
 /*-----------------------------------------------------
 * index.html.erb
 *----------------------------------------------------*/
-#main {
-    width: 480px;
-    margin: 0 auto;
-    padding: 10px 0 0 0;
-
-    .header {
-
-      .top {
-		 text-align:center;
-        .container-logo {
-          width: 100px;
-          float: left;
-		  text-align:left;
-          .logo {
-            width: 90px;
-          }
-        }
-
-        .event-date {
-          width: 160px;
-          float: right;
-		  text-align:right;
-		  img{
-			  width:150px;
-		  }
-        }
-
-		.title{
-			text-align:center;
-	        padding-top:15px;
-	  	      @media (max-width: 320px) {
-	            padding-top:10px;
-	  	      }
-			margin-bottom:15px;
-			.tagline {
-	          width: 260px;
-	  	      @media (max-width: 320px) {
-	  	        width: 246px;
-	  	      }
-	        }
-		}
-
-        .container-btn_gift {
-		  margin:0 auto;
-		  display:block;
-		  width: 220px;
-		  text-align:center;
-	  	      @media (max-width: 320px) {
-	  	        width: 180px;
-	  	      }
-		  img{
-		  	width: 220px;
-	  	      @media (max-width: 320px) {
-	  	        width: 180px;
-	  	      }
-		  }
-        }
-
-        .container-product {
-          margin-top: 25px;
-		  text-align:center;
-          .product {
-            width: 320px;
-          }
-
-         // .text_product {
-//            margin-top: -45px;
-//            width: 85%;
-//            float: left;
-          //}
-
-        }
-
-
-        .container-sns {
-		 
-		  margin:20px 10px 20px 10px;
-		  padding:25px 0;
-		  border-top:1px solid #a4b7bf;
-		  border-bottom:1px solid #a4b7bf;
-		  text-align:center;
-
-          .text_sns {
-            margin-bottom: 10px;
-			text-align:center;
-			width:200px;
-	  	      @media (max-width: 320px) {
-	  	        width:174px;
-	  	      }
-          }
-
-          .btn_kakaotalk {
-			text-align:center;
-            margin-bottom: 10px;
-			width:320px;
-	  	      @media (max-width: 320px) {
-	  	        width:280px;
-	  	      }
-          }
-
-          .btn_kakaostory {
-            margin-bottom: 10px;
-			text-align:center;
-			width:320px;
-	  	      @media (max-width: 320px) {
-	  	        width:280px;
-	  	      }
-          }
-
-          .btn_facebook {
-			  text-align:center;
-			  width:320px;
-	  	      @media (max-width: 320px) {
-	  	        width:280px;
-	  	      }
-          }
-        }
-
-
-		.container-sum-sns{
-			padding:20px 10px;
-			border-top:1px solid #a4b7bf;
-			margin:20px 10px 20px 10px;
-			.left{
-				float:left;
-				img{
-					width:40px;
-				}
-			}
-			.right{
-				float:right;
-				img{
-					height:40px;
-				}
-			}
-		}
-
-        .container-promotion {
-			margin:10px;
-          .text_screte-programming-essence {
-			display:block;
-            float: left;
-			width:164px;
-			padding-left:10px;
-          }
-
-          .btn_product-detail {
-            margin-top: -2%;
-			width:85px;
-			padding-right:10px;
-			display:block;
-            float: right;
-          }
-
-          .video {
-            margin-top: 4%;
-            width: 95%;
-          }
-        }
-      }
-    }
-
-
+.top{
+	position:relative;
+	width: 100%;
+	height:100%;
 }
-    .footer {
-      background: #fff;
-      margin-top: 5px;
-//      margin-top: 6%;
-//      padding-left: 3%;
-//      padding-right: 3%;
 
-      .wrapper-background {
-	    width: 480px;
-		margin:0 auto;  
-        background: #fff;
-		
-		p{
-			margin:0 10px;
-	   	    padding-left: 7px;
-		}
-		
-		p.first{
-			padding-bottom:10px;
-			margin-bottom:10px;
-			border-bottom:1px solid #ccc
-		}
 
-        .text_notes {
-          margin-top: 20px;
-          width: 310px;
-  	      @media (max-width: 320px) {
-  	        width:290px;
-  	      }
-		  
-        }
+#main {
+    width: 100%;
+	z-index:2;
+}
 
-        .divider_03 {
-          width: 50%;
-          margin-top: 7%;
-          margin-bottom: 10px;
-        }
+.main_bg{
+    width: 100%;
+	z-index:1;
+}
+.main_bg img{
+	width: 100%;
+}
 
-        .text_copyrights {
-          margin-bottom: 10px;
-          width: 300px;
-          background: #fff;
-  	      @media (max-width: 320px) {
-  	        width:271px;
-  	      }
-        }
-      }
-    }
+
+#main .title img{
+	width: 100%;
+}
+#main .container-btn_gift{
+	padding:0 20%;
+}
+#main .container-btn_gift .btn_gift{
+	width:100%;
+}
+#main .container-product img{
+	width:100%;
+}
+#main .container-view {
+	position:relative;
+	clear: both;
+}
+#main .container-view .container-product-detail,
+#main .container-view .view_bg{
+	position:absolute;
+}
+#main .container-view .container-product-detail{
+	z-index:2;	
+}
+#main .container-view .view_bg{
+	z-index:1;
+	margin:5%;
+}
+
+#main .container-view img{
+	width:100%;	
+}
+
+#main .container-sub_title img{
+	width:100%;	
+}
+
+#main .container-sns{
+	padding:0 5% ;
+}
+#main .container-sns img{
+	width:100%;
+}
+
+.middle{
+	position:relative;
+	width: 100%;
+}
+
+
+
 /*-----------------------------------------------------
 * product.html.erb
 *----------------------------------------------------*/
