@@ -22,9 +22,7 @@ img {border:0}
 }
 * { -webkit-text-size-adjust:none; max-width:100%; }
 .container-close {
-  margin-bottom: 10%;
-  background: #fff;
-
+	background:#fff;
   .btn_close {
     width: 25%;
     padding: 2%;
@@ -43,22 +41,28 @@ img {border:0}
 /*-----------------------------------------------------
 * index.html.erb
 *----------------------------------------------------*/
-.top{
+
+.top,
+.middle,
+.footer{
 	position:relative;
 	width: 100%;
-	height:100%;
 }
 
 
 #main {
+	position:absolute;
     width: 100%;
 	z-index:2;
 }
 
 .main_bg{
     width: 100%;
-	z-index:1;
+	img{
+		width: 100%;
+	}
 }
+
 .main_bg img{
 	width: 100%;
 }
@@ -68,7 +72,7 @@ img {border:0}
 	width: 100%;
 }
 #main .container-btn_gift{
-	padding:0 20%;
+	padding:0 22%;
 }
 #main .container-btn_gift .btn_gift{
 	width:100%;
@@ -78,38 +82,89 @@ img {border:0}
 }
 #main .container-view {
 	position:relative;
-	clear: both;
-}
-#main .container-view .container-product-detail,
-#main .container-view .view_bg{
-	position:absolute;
-}
-#main .container-view .container-product-detail{
-	z-index:2;	
-}
-#main .container-view .view_bg{
-	z-index:1;
-	margin:5%;
-}
-
-#main .container-view img{
-	width:100%;	
-}
-
-#main .container-sub_title img{
-	width:100%;	
-}
-
-#main .container-sns{
-	padding:0 5% ;
-}
-#main .container-sns img{
 	width:100%;
+	text-align:center;
+	padding-top:62%;
+	.container-product-detail{
+		width:100%;
+		position:absolute;
+		top:83%;
+		a img{
+			width:30%;
+		}
+	}
+	.view_bg{
+		width:92%;
+	}
 }
+
+
 
 .middle{
 	position:relative;
 	width: 100%;
+	margin-top:-1%;
+	.content{
+		position:absolute;
+		z-index:3;
+	}
+	.middle_bg{
+		img{
+			width: 100%;
+		}
+	}
+}
+.middle .container-view img{
+	width:100%;	
+}
+
+.middle .container-sub_title img{
+	width:100%;	
+}
+
+.middle .container-sns{
+	padding:0 5% ;
+	div{
+		padding:1% 0;
+	}
+}
+.middle .container-sns img{
+	width:100%;
+}
+
+.container-sum-sns{
+	.left{
+		padding-top:78%;
+		padding-left:5%;
+		float:left;
+	}
+	.right{
+		padding-top:78%;
+		float:right;
+		padding-right:5%;
+	}
+}
+
+
+
+
+
+.footer{
+	position:relative;
+	width: 100%;
+	margin-top:-1%;
+	.footer_img{
+		position:absolute;
+	    width: 100%;
+		z-index:2;
+		left:4%;
+		top:73%;
+	}
+	.bottom_bg{
+		img{
+			width: 100%;
+		}
+	}
 }
 
 
@@ -118,42 +173,10 @@ img {border:0}
 * product.html.erb
 *----------------------------------------------------*/
 #product {
-  width: 480px;
-  margin: 0 auto;
-
-  .container-product {
-    width: 480px;
-    margin: 0 auto;
-    margin-bottom: 60px;
-	text-align:center;
-
-
+  width: 100%;
     .text-top {
-      width: 200px;
-      margin-bottom: 10px;
-	  text-align:center;
-	      @media (max-width: 767px) {
-	        width: 240px;
-	      }
+      width: 100%;
     }
-
-    .product {
-      width: 260px;
-	  margin-bottom: 6%;
-	  text-align:center;
-      @media (max-width: 767px) {
-         width: 270px;
-      }
-    }
-
-    .text-bottom {
-      width: 270px;
-	  text-align:center;
-      @media (max-width: 767px) {
-         width: 290px;
-      }
-    }
-  }
 }
 /*-----------------------------------------------------
 * birthday.html.erb
@@ -161,26 +184,25 @@ img {border:0}
 #birthday {
   width: 480px;
   margin: 0 auto;
+  background: asset-url("mobile/popup/bg_common.png");
 
   .popup-birthday_text-top {
-    margin:10px 0 0;
+    margin:20px 0 0;
 	text-align:center;
 	img{
-	 width: 259px;	
+	 width: 80%;	
 	}
   }
 
   .container-info {
-    width: 290px;
+    width: 80%;
     margin: 0 auto;
-    padding: 10px;
+    padding: 3%;
     background: #fff;
-	    @media (max-width: 320px) {
-	       width: 270px;
-	    }	
+	   
 	.container-text-top2{
 	 text-align:center;	
-	 padding:5px 0;
+	 padding:0 0 2%;
 		.text-top2{
 		width: 260px;	
 		}
@@ -234,7 +256,6 @@ img {border:0}
 
   .container-month {
 	   float:left;
-	   padding-left:63px;
     .select_month {
       width: 80px;
       height: 30px;
@@ -323,7 +344,7 @@ img {border:0}
 	  text-align:center;
 	  padding:10px 0 0;
 	  img{
-		  width:274px;
+		  width:80%;
 	  }
   	
   }
@@ -362,14 +383,10 @@ img {border:0}
     }
   }
 
-  .divider_01 {
-
-    margin: 10px 0;
-  }
   .container-terms-master {
 	  display:block;
-	  padding-left:100px;
-	  padding-top:5px;
+	  width:37%;
+	  margin:0 auto;
   }
   .container-terms-master.second {
 	  padding-top:10px;
@@ -404,20 +421,21 @@ img {border:0}
   margin: 0;
   padding: 0;
   background: #fff;
-
+  
   .btn_close {
     float: right;
   }
 }
 #terms {
   margin: 0;
-  padding: 0 20px;
+  padding: 20px;
   color: #333;
   font-family: 'Dotum';
   font-size: 13px;
   line-height: 15px;
   word-break: break-all;
   white-space: pre-line;
+  background: asset-url("mobile/popup/bg_common.png");
 }
 
 
@@ -425,9 +443,13 @@ img {border:0}
 * thanks.html.erb
 *----------------------------------------------------*/
 #thanks {
-  width: 600px;
+  width: 100%;
+  height:100%;
   margin: 0 auto;
-
+  background: asset-url("mobile/popup/bg_common.png");
+  .inner{
+	  padding:10% 0;
+  }
   .text_thanks {
     padding-left: 22%;
     width: 55%;
@@ -444,9 +466,13 @@ img {border:0}
 * duplication.html.erb
 *----------------------------------------------------*/
 #duplication {
-  width: 640px;
-  margin: 0 auto;
-
+    width: 100%;
+    height:100%;
+    margin: 0 auto;
+    background: asset-url("mobile/popup/bg_common.png");
+    .inner{
+  	  padding:10% 0;
+    }
   .text_duplicate {
     width: 70%;
     padding-left: 15%;
@@ -469,30 +495,7 @@ img {border:0}
 /*-----------------------------------------------------
 * thanks.html.erb
 *----------------------------------------------------*/
-#thanks {
-  width: 600px;
-  margin: 0 auto; }
-  #thanks .text_thanks {
-    padding-left: 22%;
-    width: 55%; }
-  #thanks .btn_finish {
-    margin-top: 5%;
-    padding-left: 30%;
-    width: 40%; }
 
-/*-----------------------------------------------------
-* duplication.html.erb
-*----------------------------------------------------*/
-#duplication {
-  width: 600px;
-  margin: 0 auto; }
-  #duplication .text_duplicate {
-    width: 70%;
-    padding-left: 15%; }
-  #duplication .btn_duplicate {
-    width: 40%;
-    margin-top: 6%;
-    padding-left: 30%; }
 
 /*-----------------------------------------------------
 * coupon.html.erb
@@ -631,7 +634,7 @@ img {border:0}
 	background:#c6d6da;
 	padding: 20px;
 	.text_caution{
-	  width: 237px;
+	  width: 85%;
 	}	
 }
 
@@ -675,6 +678,6 @@ img {border:0}
 }
 
 .info_birth_date{
-  display: table;
-  clear: both;
+	width:54%;
+	margin:0 auto;
 }

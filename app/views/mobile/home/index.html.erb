@@ -1,7 +1,6 @@
 <div class="top">
 	
 	<div id="main">
-			
 				<div class="title">
 					<%= image_tag("mobile/new/title.png", class:"title_img") %>
 				</div>
@@ -13,26 +12,35 @@
 					<% end %>
 				</div>
 			
-				<div class="container-product">
-					<%= image_tag("mobile/new/img_product.png", class:"product") %>
-				</div>
 				<div class="container-view">
-					<a href="/mobile/product"  class="container-product-detail"><%= image_tag("mobile/new/btn_view.png", class:"btn_product-detail") %></a>
+					<div class="container-product-detail">
+						<a href="/mobile/product"><%= image_tag("mobile/new/btn_view.png", class:"btn_product-detail") %></a>
+				    </div>
 					<%= image_tag("mobile/new/img_view.png", class:"view_bg") %>
 				</div>
+	</div>
+	<div class="main_bg">
+		<%= image_tag("mobile/new/main_bg.jpg", class:"main_bg") %>
 	</div>
 
 </div>
 
 <div class="middle">
+		<div class="content">
 			<div class="container-sub_title">
 				<%= image_tag("mobile/new/sub_title.png", class:"sub_title") %>
 			</div>
       
 			<div class="container-sns">
+				<div>
 				<a href="#" id="kakaotalk_share_link"><%= image_tag("mobile/btn_kakaotalk.png", class:"btn_kakaotalk") %></a>
+			    </div>
+				<div>
 				<a href="#" id="kakaostory_share_link"><%= image_tag("mobile/btn_kakaostory.png", class:"btn_kakaostory") %></a>
+				</div>
+				<div>
 				<a href="#" id="facebook_share_link"><%= image_tag("mobile/btn_facebook.png", class:"btn_facebook") %></a>
+				</div>
 			</div>
       
 	  
@@ -51,15 +59,19 @@
 					</a>
 				</div>
 			</div>
+		</div>
+		<div class="middle_bg">
+			<%= image_tag("mobile/new/middle_bg.jpg", class:"middle_bg") %>
+		</div>
 </div>
 
 <div class="footer">
-	<div class="wrapper-background">
-		<p class=first>
-			<%= image_tag("mobile/text_notes.png", class:"text_notes") %>
-		</p>
-		<p>
-			<%= image_tag("mobile/text_copyrights.png", class:"text_copyrights") %>
-		</p>
+	<div class="footer_img">
+		<%= link_to "#", id:"qna_button" do%>
+		<%= image_tag("mobile/new/btn_qna.png", class:"btn_qna") %>
+		<% end %>
+	</div>
+	<div class="bottom_bg">
+		<%= image_tag("mobile/new/bottom_bg.jpg", class:"bottom_bg") %>
 	</div>
 </div>
