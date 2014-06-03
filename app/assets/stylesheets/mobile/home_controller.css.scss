@@ -42,45 +42,38 @@ img {border:0}
 * index.html.erb
 *----------------------------------------------------*/
 
-.top,
-.middle,
-.footer{
+.top{
 	position:relative;
 	width: 100%;
 }
-
-
-#main {
+.top_content{
+	width: 100%;
 	position:absolute;
-    width: 100%;
 	z-index:2;
 }
-
-.main_bg{
+.img_bg{
     width: 100%;
+	z-index:1;
 	img{
 		width: 100%;
 	}
 }
 
-.main_bg img{
-	width: 100%;
-}
 
 
-#main .title img{
+.title img{
 	width: 100%;
 }
-#main .container-btn_gift{
+.container-btn_gift{
 	padding:0 22%;
 }
-#main .container-btn_gift .btn_gift{
+.container-btn_gift .btn_gift{
 	width:100%;
 }
-#main .container-product img{
+.container-product img{
 	width:100%;
 }
-#main .container-view {
+.container-view {
 	position:relative;
 	width:100%;
 	text-align:center;
@@ -99,47 +92,37 @@ img {border:0}
 }
 
 
-
-.middle{
-	position:relative;
-	width: 100%;
-	margin-top:-1%;
-	.content{
-		position:absolute;
-		z-index:3;
-	}
-	.middle_bg{
-		img{
-			width: 100%;
-		}
-	}
-}
-.middle .container-view img{
+.container-view img{
 	width:100%;	
 }
 
-.middle .container-sub_title img{
+.container-sub_title img{
 	width:100%;	
 }
 
-.middle .container-sns{
+.container-sns{
 	padding:0 5% ;
 	div{
 		padding:1% 0;
 	}
 }
-.middle .container-sns img{
+.container-sns img{
 	width:100%;
 }
 
 .container-sum-sns{
 	.left{
-		padding-top:78%;
+		padding-top:76%;
 		padding-left:5%;
 		float:left;
+		width:30%;
+		img{
+			width:47%;
+		}
 	}
 	.right{
-		padding-top:78%;
+		width:45%;
+		padding-top:76%;
 		float:right;
 		padding-right:5%;
 	}
@@ -157,8 +140,12 @@ img {border:0}
 		position:absolute;
 	    width: 100%;
 		z-index:2;
-		left:4%;
+		left:5%;
 		top:73%;
+		a{
+			display:block;
+			width:23%;
+		}
 	}
 	.bottom_bg{
 		img{
