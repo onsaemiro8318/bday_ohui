@@ -127,6 +127,15 @@ $(document).ready(function(){
 
   });
 
+  $("#qna_button").click(function(e){
+    e.preventDefault();
+    $("#popup_qna").modal({
+      closeClass: 'b-close',
+    });
+    ga('send', 'event', 'button', 'click', 'pc qna');
+
+  });
+
   $("#blog_share_link").click(function(e){
     e.preventDefault();
 		// alert('아쉽네요!\n 다음엔 조금더 서둘러주세요~');

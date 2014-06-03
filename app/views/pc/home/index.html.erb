@@ -188,12 +188,13 @@
   </div>
 <div class="footer_custom"> <!-- Caution -->
 	<div class="inner">
-          <%= link_to "#popup_qna", {id: "qna_button", class:"btn_qna"} do %>
-            <%= image_tag("pc/btn_qna.png") %>
-          <% end %>
+		<%= link_to "#popup_qna", {id: "qna_button", class:"btn_qna"} do %>
+			<%= image_tag("pc/btn_qna.png") %>
+		<% end %>
 	</div>
 </div>
 <%= render "popup_personal"%>
 <%= render "popup_fin1" %>
 <%= render "popup_fin2" %>
 <%= render "popup_product" %>
+<%= render "popup_qna" %>

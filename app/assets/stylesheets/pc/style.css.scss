@@ -282,6 +282,14 @@ img{
   text-align: center;
 }
 
+#popup_qna{
+  display: none;
+  width: 451px;
+  height: 550px;
+  background-image: asset-url("pc/popup/product/bg.png");
+  text-align: center;
+}
+
 #popup_blog{
 	z-index:9999;
   width: 420px;
