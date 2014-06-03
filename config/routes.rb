@@ -37,6 +37,7 @@ Rails.application.routes.draw do
     get 'unique_error' => 'home#unique_error'
     get 'terms' => 'home#terms'
     get 'product' => 'home#product'
+    get 'qna' => 'home#qna'
     resources :users
   end
   

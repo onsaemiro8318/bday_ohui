@@ -30,4 +30,6 @@ class Mobile::HomeController < ApplicationController
   def product
 
   end
+  def qna
+  end
 end
