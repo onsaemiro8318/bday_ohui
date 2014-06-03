@@ -30,7 +30,7 @@ $(document).ready(function(){
     month = $("#select_month").val();
 		d = new Date();
 		this_day = d.getDate();
-    if(month === '4'){
+    if(month === '6'){
 			add_days = range(this_day, 30);
       $("#select_day option").remove();
       $.each(add_days, function( index, value ){
@@ -39,9 +39,9 @@ $(document).ready(function(){
           text:value
         })).selectric('refresh');
       });
-    }else if(month === '5'){
+    }else if(month === '7'){
       $("#select_day option").remove();
-			add_days = range(1, 6);
+			add_days = range(1, 20);
       $.each(add_days, function( index, value ){
         $("#select_day").append($('<option>',{
           value:value,
@@ -124,6 +124,15 @@ $(document).ready(function(){
       closeClass: 'b-close',
     });
     ga('send', 'event', 'button', 'click', '제품 자세히 보기');
+
+  });
+
+  $("#qna_button").click(function(e){
+    e.preventDefault();
+    $("#popup_qna").modal({
+      closeClass: 'b-close',
+    });
+    ga('send', 'event', 'button', 'click', 'pc qna');
 
   });
 
