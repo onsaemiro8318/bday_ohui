@@ -169,7 +169,8 @@ img {border:0}
 * birthday.html.erb
 *----------------------------------------------------*/
 #birthday {
-  width: 480px;
+//  width: 480px;
+	width: 100%;
   margin: 0 auto;
   background: asset-url("mobile/popup/bg_common.png");
 
@@ -191,7 +192,8 @@ img {border:0}
 	 text-align:center;	
 	 padding:0 0 2%;
 		.text-top2{
-		width: 260px;	
+			width: 80%;
+//		width: 260px;	
 		}
 	}
 	.container-info-inner{
@@ -244,11 +246,12 @@ img {border:0}
   .container-month {
 	   float:left;
     .select_month {
-      width: 80px;
-      height: 30px;
-      margin-right: 5px;
-      padding-left: 10px;
-      font-size: 14px;
+//      width: 80px;
+			width: 50%;
+//      height: 30px;
+//      margin-right: 5px;
+//      padding-left: 10px;
+//      font-size: 14px;
       font-weight: bold;
       border: 0;
       float: left;
@@ -284,7 +287,7 @@ img {border:0}
   }
 
   .container-day {
- 	   float:left;
+//      float:left;
     .select_day {
       width: 90px;
       height: 30px;
@@ -609,11 +612,13 @@ img {border:0}
 }
 
 .container-coupon{
-  width:180px;
+//  width:180px;
+width: 37%;
   margin:0 auto;
   padding:15px;
   input{
-	  width:180px;
+//	  width:180px;
+		width: 100%;
   }
 }
 
@@ -640,18 +645,21 @@ img {border:0}
 
 .text_terms{
   float: left;
-  width: 90px;
+	//  width: 90px;
+	width: 65%;
   padding-top: 7px;
 }
 .text_terms2{
   float: left;
-  width: 110px;
+//  width: 110px;
+	width: 80%;
   padding-top: 7px;
 }
 
 
 .detail_terms{
-  width: 82px;
+//  width: 82px;
+width: 55%;
 
 }
 .error{
@@ -665,6 +673,10 @@ img {border:0}
 }
 
 .info_birth_date{
-	width:54%;
+	width:60%;
 	margin:0 auto;
+}
+
+.select_month{
+	width: 100%;
 }
