@@ -5,6 +5,7 @@ upstream unicorn_<%= fetch :application %> {
 server{
 	listen 443 default ssl;	
 	server_name birthday.su-m37.co.kr bday.mnv.kr;
+	
 	# listen 80;
 	#ssl on;
 	ssl_certificate /etc/ssl/certs/<%= fetch :nginx_ssl_certificate %>;
@@ -26,6 +27,16 @@ server{
 		proxy_redirect off;
 		proxy_pass http://unicorn_<%= fetch :application %>;
 	}
+	root <%= current_path %>/public;
+	location ~ ^/assets/ {
+		gzip_static on;
+		expires max;
+		add_header Cache-Control public;
+	}
+	error_log  /var/log/nginx/error.<%= fetch :application %>.log;
+	access_log	/var/log/nginx/access.<%= fetch :application %>.log;
+	client_max_body_size 100M;
+	charset     utf-8;  
 }
 server{
     listen 80;
