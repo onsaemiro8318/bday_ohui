@@ -26,6 +26,7 @@ server{
 		proxy_redirect off;
 		proxy_pass http://unicorn_<%= fetch :application %>;
 	}
+}
 server{
     listen 80; 
     server_name birthday.mnv.kr;
