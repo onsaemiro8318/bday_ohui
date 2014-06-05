@@ -421,7 +421,7 @@ img {border:0}
 	background: asset-url("mobile/popup/bg_common.png");
 }
 .container-logo {
-	margin-bottom: 30px;
+	margin-bottom: 5%;
 	padding-left:10px;
 }
 .container-logo .logo {
@@ -430,21 +430,8 @@ img {border:0}
 .coupon_tops{
 	text-align:center;
 	position:relative;
-	.name {
-		position: absolute;
-		left: 10px;
-		top: 0px;
-		font-size: 18px;
-		letter-spacing:-1px; 
-		font-weight:bold;
-		width:85px;
-		text-align:right;
-		@media (max-width: 320px) {
-			width:75px; 
-		}
-	}
 	.text_coupon_top {
-		width:80%;
+		width:90%;
 	}
 }
 
@@ -458,10 +445,10 @@ img {border:0}
 	margin-bottom:10px;
 }
 #coupon_success .container-product .coupon_imgs {
-	width: 80%;
+	width: 90%;
 }
 #coupon_success .text_product_caution {
-	width: 80%; 
+	width: 90%; 
 }
 #coupon_success .bottom {
 	margin:10px 0 0;
@@ -470,7 +457,7 @@ img {border:0}
 	text-align:center;
 }
 #coupon_success .bottom .text_coupon_caution2 {
-	width: 75%; 
+	width: 80%; 
 }
 #coupon_success .bottom .btn_coupon_use_before {
 	margin-top: 5%;
