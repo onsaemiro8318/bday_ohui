@@ -17,12 +17,12 @@
 						<%= image_tag("mobile/popup-birthday_label-month.png", class:"label-month") %>
 						<%= select_tag "user[birthday_month]", 
 							options_for_select([6,7], Time.now.month),
-		          {class: 'select_month', id:"select_month"} %>
+		          {class: 'select_month', id:"select_month", "readonly" => "readonly", "disable" => "disable"} %>
 	        </div>
 	        <div class="container-day clearfix">
 						<%= select_tag "user[birthday_day]", 
 							options_for_select(days_option_helper, Time.now.day),
-		          {name:'user[birthday_day]', class: 'select_day', id: "select_day"} %>
+		          {name:'user[birthday_day]', class: 'select_day', id: "select_day", "readonly" => "readonly", "disable" => "disable"} %>
 	          <%= image_tag("mobile/popup-birthday_label-day.png", class:"label-day") %>
 	        </div>
       </div>

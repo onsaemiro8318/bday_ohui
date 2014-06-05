@@ -6,6 +6,7 @@
 // require icheck.min
 //= require jquery.selectBox
 //= require jquery.selectric
+//= require jquery.selectBoxIt.js
 //= require jquery.maskedinput.min
 //= require jquery.mask
 //= jquery.meio.mask.js
