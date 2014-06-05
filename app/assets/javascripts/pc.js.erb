@@ -12,6 +12,9 @@ $(document).ready(function(){
 		debug: false
 	} );
 	
+	$('.select_custom_1').selectric();
+	$('.select_custom_2').selectric('refresh');
+
 	clip.on("load", function (clip) {
 		clip.on( "complete", function(clip, args) {
 			blog_share();

@@ -112,8 +112,8 @@ $(document).ready(function(){
       })
     });
   });
-	// $('#select_month').selectric();
-	// $('#select_day').selectric();
+	$('#select_month').selectBox();
+	$('#select_day').selectBox();
 	$('#select_month').change(function(e){
 		var month;
 		var days;
@@ -139,8 +139,7 @@ $(document).ready(function(){
 					text:value
 				}));
 			});
-		}
-
+		}	
 	});
 	// $('#select_month').selectric({
 	// 	onChange: function(){
@@ -174,7 +173,6 @@ $(document).ready(function(){
 	// 		}
 	// 	}
 	// });
-	    // e.preventDefault();
 
 });
 
