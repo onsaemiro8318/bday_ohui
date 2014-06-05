@@ -1,3 +1,15 @@
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: ".";
+  clear: both;
+  height: 0;
+}
+* html .clearfix { height: 1%; }
+//.clearfix { display: block; }
+
+
 styles.cssa{
   text-decoration: none;
 }
@@ -143,7 +155,7 @@ img{
 .info_other{
   width: 369px;
   margin-left: 41px;
-  margin-bottom: 42px;
+  margin-bottom:15px;
   text-align: left;
 }
 
@@ -154,6 +166,7 @@ img{
 .info_input_label_2{
   margin-left: 78px;
 }
+
 
 .info_caution_class{
   margin-top: 6px;
@@ -186,33 +199,40 @@ img{
   -moz-appearance: checkbox;
   -ms-appearance: checkbox;
   -o-appearance: checkbox;
-  margin-left: 5px;
-  margin-right: 12px;
-  margin-top:3px;
+
 }
 
 .check_box{
 	position:relative;
-	height:30px;
+	height:28px;
+	padding-top:15px;
 }
-.check_box input{
-	position:absolute;
-	top:2px;
-	left:240px;
+.check_box.second{
+	padding-top:0;
 }
+.check_box .label_01,
+.check_box .label_02,
+.check_box .check{
+	float:left;
+	display:block;
+}
+.check_box .label_01,
+.check_box .label_02{
+	width:135px;
+	text-align:right;
+	padding-top:3px;
+	padding-right:17px;
+}
+
+
 .check_box.second input{
-	top:3px;
-	left:242px;
+
 }
 .check_box .info_input_label_3{
-	position:absolute;
-	top:8px;
-	left:140px;
+	
 }
 .check_box .info_input_label_4{
-	position:absolute;
-	top:6px;
-	left:117px;
+	
 }
 
 .to_personal{
@@ -467,12 +487,9 @@ span.customSelect2 {
   margin-left:4px;
   }
 .star.agree{
-margin-left:270px;
-margin-top:11px;
   }
-.star.agree2{
-margin-left:270px;  
-margin-top:8px;
+.star.agree2{ 
+margin-top:6px;
   }
 
 
@@ -487,9 +504,6 @@ margin-top:8px;
 
 .popup_info_to_personal{
   margin-left:10px;
-  position:absolute;
-  left:160px;
-  top:60px;
 }
 
 .close-modal{

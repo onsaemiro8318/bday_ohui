@@ -174,12 +174,12 @@ img {border:0}
 	margin: 0 auto;
 	background: asset-url("mobile/popup/bg_common.png");
 
-	.popup-birthday_text-top {
-		margin:20px 0 0;
-		text-align:center;
-		img{
-			width: 80%;	
-		}
+  .popup-birthday_text-top {
+    margin:20px 0 10px;
+	text-align:center;
+	img{
+	 width: 80%;
+		}	
 	}
 
 	.container-info {
@@ -188,6 +188,7 @@ img {border:0}
 		padding: 3%;
 		background: #fff;
 	   
+//<<<<<<< HEAD
 		.container-text-top2{
 			text-align:center;	
 			padding:0 0 2%;
@@ -522,12 +523,12 @@ img {border:0}
 }
 
 .container-coupon{
-	//  width:180px;
-	width: 37%;
-	margin:0 auto;
-	padding:15px;
-	input{
-		//	  width:180px;
+//  width:180px;
+width: 50%;
+  margin:0 auto;
+  padding:15px;
+  input{
+//	  width:180px;
 		width: 100%;
 	}
 }
@@ -556,21 +557,20 @@ img {border:0}
 .text_terms{
 	float: left;
 	//  width: 90px;
-	width: 65%;
-	padding-top: 7px;
+  width: 40%;
+  padding-top: 7px;
 }
 .text_terms2{
-	float: left;
-	//  width: 110px;
-	width: 80%;
-	padding-top: 7px;
+  float: left;
+//  width: 110px;
+	width: 50%;
+  padding-top: 7px;
 }
 
 
 .detail_terms{
-	//  width: 82px;
-	width: 55%;
-
+//  width: 82px;
+width: 33%;
 }
 .error{
   
@@ -585,6 +585,7 @@ img {border:0}
 .info_birth_date{
 	width:75%;
 	margin:0 auto;
+//	padding-left:23%;
 }
 
 .select_month{
