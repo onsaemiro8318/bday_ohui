@@ -1,7 +1,6 @@
 //= require jquery
 //= require jquery_ujs
 // require turbolinks
-//= require phone
 //= require jquery.bpopup.min
 //= require jquery.customSelect.min
 // require icheck.min
@@ -12,3 +11,4 @@
 //= jquery.meio.mask.js
 //= require jquery.inputmask
 //= require kakao.link.js
+//= require phone
