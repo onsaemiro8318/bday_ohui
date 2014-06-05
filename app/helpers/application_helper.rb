@@ -1,12 +1,13 @@
 module ApplicationHelper
   def days_option_helper
     today = Time.now
-    if Time.now.month == 4
+    if Time.now.month == 6
       finish_of_this_month = 30
-    else
-      finish_of_this_month = 6
+    elsif Time.now.month == 7
+      finish_of_this_month = 20
     end
-    (today.day..finish_of_this_month).to_a
+    days = (today.day..finish_of_this_month).to_a
+    return days
   end
   
   def days_helper(day)
