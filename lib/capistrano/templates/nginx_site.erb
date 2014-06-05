@@ -26,12 +26,6 @@ server{
 		proxy_redirect off;
 		proxy_pass http://unicorn_<%= fetch :application %>;
 	}
-}
-server{
-    listen 80; 
-    server_name birthday.mnv.kr;
-    rewrite ^/(.*) https://$server_name/$1 permanent;
-}			
 	<% else %>
 	listen 80;
 	server_name bday.mnv.kr birthday.su-m37.com birthday.su-m37.co.kr;
@@ -43,7 +37,7 @@ server{
 		proxy_redirect off;
 		proxy_pass http://unicorn_<%= fetch :application %>;
 	}
-	<% end %>
+	
 	root <%= current_path %>/public;
 	
 	location ~ ^/assets/ {
@@ -57,4 +51,10 @@ server{
 	client_max_body_size 100M;
 	charset     utf-8;  
 	
+}
+<% end %>
+server{
+    listen 80;
+    server_name birthday.mnv.kr;
+    rewrite ^/(.*) https://$server_name/$1 permanent;
 }
