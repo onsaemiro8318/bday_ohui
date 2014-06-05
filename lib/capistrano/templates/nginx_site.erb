@@ -4,7 +4,7 @@ upstream unicorn_<%= fetch :application %> {
 			
 server{
 	listen 443 default ssl;	
-	server_name birthday.mnv.kr;
+	server_name bday.mnv.kr;
 	listen 80;
 	#ssl on;
 	ssl_certificate /etc/ssl/certs/<%= fetch :nginx_ssl_certificate %>;
