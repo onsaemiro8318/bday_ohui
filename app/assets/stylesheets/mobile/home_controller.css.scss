@@ -416,8 +416,9 @@ img {border:0}
 #coupon_success {
 
 	width: 480px;
-	margin: 5% auto 0 auto;
-	padding: 0; 
+	margin: 0 auto;
+	padding: 5% 0 0; 
+	background: asset-url("mobile/popup/bg_common.png");
 }
 .container-logo {
 	margin-bottom: 30px;
@@ -473,7 +474,7 @@ img {border:0}
 	}
 }
 #coupon_success .bottom {
-	margin:10px 0;
+	margin:10px 0 0;
 	padding: 20px 0;
 	background: white;
 	text-align:center;
