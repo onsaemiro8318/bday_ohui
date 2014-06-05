@@ -20,9 +20,6 @@ $(document).ready(function(){
 		});
 	});
   ga('send', 'event', 'button', 'click', '메인 페이지');
-  $('.select_custom_1').selectric();
-  $('.select_custom_2').selectric('refresh');
-  
   $('#select_month').change(function(e){
     e.preventDefault();
     var month;
@@ -239,7 +236,7 @@ function share() {
     method: "feed",
     name: "Skin Birthday",
     link: "<%= Rails.application.secrets.url %>?s=fb",
-    picture: '<%= Rails.application.secrets.url + asset_url("sns/facebook_share.jpg") %>',
+    picture: 'https://<%= Rails.application.secrets.url + asset_url("sns/facebook_share.jpg") %>',
     caption: "Make your skin birthday Sponsored by 숨37",
     description: text
   };
