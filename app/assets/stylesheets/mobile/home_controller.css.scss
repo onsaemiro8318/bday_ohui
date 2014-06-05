@@ -175,7 +175,7 @@ img {border:0}
   background: asset-url("mobile/popup/bg_common.png");
 
   .popup-birthday_text-top {
-    margin:20px 0 0;
+    margin:20px 0 10px;
 	text-align:center;
 	img{
 	 width: 80%;	
@@ -192,7 +192,7 @@ img {border:0}
 	 text-align:center;	
 	 padding:0 0 2%;
 		.text-top2{
-			width: 80%;
+			width: 90%;
 //		width: 260px;	
 		}
 	}
@@ -255,6 +255,7 @@ img {border:0}
       font-weight: bold;
       border: 0;
       float: left;
+	  font-size: 12px;
       -webkit-appearance: none;
       -moz-appearance: none;
       -o-appearance: none;
@@ -263,8 +264,8 @@ img {border:0}
       @media (max-width: 767px) {
         width: 54px;
         height: 26px;
-        padding-left: 10px;
-        font-size: 10px;
+        padding-left: 7px;
+        font-size: 12px;
         background: asset-url("mobile/btn_selectMonthDay50.png") no-repeat left top;
       }
 /*
@@ -280,20 +281,21 @@ img {border:0}
 
     .label-month {
       float: left;
-      padding: 7px 10px 0 0;
+      padding: 7px 10px 0 3px;
       width: 10px;
       display:block;
     }
   }
 
   .container-day {
-//      float:left;
+    float:left;
+	padding-left:10px;
     .select_day {
       width: 90px;
       height: 30px;
       margin-right: 3px;
-      padding-left: 10px;
-      font-size: 14px;
+      padding-left: 7px;
+      font-size: 12px;
       font-weight: bold;
       border: 0;
       float: left;
@@ -305,8 +307,8 @@ img {border:0}
       @media (max-width: 767px) {
         width: 54px;
         height: 26px;
-        padding-left: 10px;
-        font-size: 10px;
+        padding-left: 7px;
+        font-size: 12px;
         background: asset-url("mobile/btn_selectMonthDay50.png") no-repeat left top;
       }
 
@@ -375,8 +377,8 @@ img {border:0}
 
   .container-terms-master {
 	  display:block;
-	  width:37%;
-	  margin:0 auto;
+	  padding-left:33%;
+	  padding-top:5px;
   }
   .container-terms-master.second {
 	  padding-top:10px;
@@ -613,7 +615,7 @@ img {border:0}
 
 .container-coupon{
 //  width:180px;
-width: 37%;
+width: 50%;
   margin:0 auto;
   padding:15px;
   input{
@@ -646,20 +648,20 @@ width: 37%;
 .text_terms{
   float: left;
 	//  width: 90px;
-	width: 65%;
+  width: 40%;
   padding-top: 7px;
 }
 .text_terms2{
   float: left;
 //  width: 110px;
-	width: 80%;
+	width: 50%;
   padding-top: 7px;
 }
 
 
 .detail_terms{
 //  width: 82px;
-width: 55%;
+width: 33%;
 
 }
 .error{
@@ -673,8 +675,7 @@ width: 55%;
 }
 
 .info_birth_date{
-	width:60%;
-	margin:0 auto;
+	padding-left:23%;
 }
 
 .select_month{
