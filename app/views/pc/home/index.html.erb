@@ -68,7 +68,8 @@
             <div> <%= image_tag("pc/popup/info/info_label_1.png", class:"info_input_label_1") %>
               <input type='text' data-name='name' id='info_name' name='user[name]' class="info_input_name" value="" maxlength="4" />
 		    </div>
-            <div> <%= image_tag("pc/popup/info/info_label_2.png", class:"info_input_label_2") %>
+            <div class="phone_num"> 
+				<%= image_tag("pc/popup/info/info_label_2.png", class:"info_input_label_2") %>
               <input type='text' data-name='phone' id='info_phone' name='user[phone]' class="info_input_call" value="" maxlength="13" />
 		    </div>
             <div class="check_box clearfix">
@@ -84,14 +85,15 @@
 		            <% end %>
 			    </div>
           	</div>
-            <div class="check_box second clearfix">
-				<div class="label_02">
-					<%= image_tag("pc/popup/info/info_label_4.png", class:"info_input_label_4") %>
-				</div>
-				<div class="check">
-           			 <%= f.check_box "agree2", {"data-name" => "agree2", id:"info_input_radio2", class:"info_input_radio" }%>
+            <div class="check_box clearfix">
+				<div class="label_01">
+					<%= image_tag("pc/popup/info/info_label_4.png") %>
 			    </div>
+				<div class="check">
+            		 <%= f.check_box "agree2", {"data-name" => "agree2", id:"info_input_radio2", class:"info_input_radio" }%>
+				</div>
           	</div>
+
 			
 		  </div>
             <%= image_submit_tag("pc/popup/info/button.png",{id: "info_fin"}) %>

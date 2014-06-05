@@ -1,13 +1,23 @@
 .clearfix:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: ".";
-  clear: both;
-  height: 0;
+	clear: both;
+	display: block;
+	content: " ";
+	height: 0px;
+	visibility: hidden;
 }
-* html .clearfix { height: 1%; }
-//.clearfix { display: block; }
+.clearfix {
+	display: inline-block;
+}
+/* Hide these rules from IE-mac \*/
+* html .clearfix {
+	height: 1%;
+}
+.clearfix {
+	display: block;
+}
+li.clearfix {
+	display: list-item;
+}
 
 
 styles.cssa{
@@ -202,27 +212,31 @@ img{
 
 }
 
+.phone_num{
+	padding-bottom:10px;
+}
+
 .check_box{
 	position:relative;
 	height:28px;
-	padding-top:15px;
 }
-.check_box.second{
-	padding-top:0;
+
+
+.check_box .label_01{
+	position:absolute;
+	right:230px;
+	top:3px;
 }
-.check_box .label_01,
-.check_box .label_02,
 .check_box .check{
-	float:left;
-	display:block;
+	position:absolute;
+	right:205px;
 }
-.check_box .label_01,
-.check_box .label_02{
-	width:135px;
-	text-align:right;
-	padding-top:3px;
-	padding-right:17px;
+.check_box .btn_view_personal{
+	position:absolute;
+	right:120px;
 }
+
+
 
 
 .check_box.second input{
