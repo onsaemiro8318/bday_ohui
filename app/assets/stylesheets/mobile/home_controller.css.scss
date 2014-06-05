@@ -444,10 +444,7 @@ img {border:0}
 		}
 	}
 	.text_coupon_top {
-		width:330px;
-		@media (max-width: 320px) {
-			width:290px;
-		}
+		width:80%;
 	}
 }
 
@@ -461,17 +458,10 @@ img {border:0}
 	margin-bottom:10px;
 }
 #coupon_success .container-product .coupon_imgs {
-	width: 330px;
-	margin-bottom: 0; 
-	@media (max-width: 320px) {
-		width:290px;
-	}
+	width: 80%;
 }
 #coupon_success .text_product_caution {
-	width: 300px; 
-	@media (max-width: 320px) {
-		width:250px;
-	}
+	width: 80%; 
 }
 #coupon_success .bottom {
 	margin:10px 0 0;
@@ -480,10 +470,7 @@ img {border:0}
 	text-align:center;
 }
 #coupon_success .bottom .text_coupon_caution2 {
-	width: 290px; 
-	@media (max-width: 320px) {
-		width:265px;
-	}
+	width: 75%; 
 }
 #coupon_success .bottom .btn_coupon_use_before {
 	margin-top: 5%;
