@@ -76,12 +76,12 @@ $(document).ready(function(){
 			type: 'get',
 			url: '/coupon_finish.json',
 			success: function (data) {
-				if(data.result == "finish"){
-					alert("아쉽네요!\n다음엔 조금더 서둘러주세요~");
-				}else{
+				// if(data.result == "finish"){
+				// 	alert("아쉽네요!\n다음엔 조금더 서둘러주세요~");
+				// }else{
 					confirm("쿠폰을 사용하시겠습니까?");
 					$("#coupon_form").submit();
-				}
+				// }
 			}
 		});
 	});
@@ -112,8 +112,6 @@ $(document).ready(function(){
       })
     });
   });
-	// $('#select_month').selectric();
-	// $('#select_day').selectric();
 	$('#select_month').change(function(e){
 		var month;
 		var days;
@@ -139,12 +137,12 @@ $(document).ready(function(){
 					text:value
 				}));
 			});
-		}
-
+		}	
 	});
+	// $("#select_day").selectric({disableOnMobile: false});
 	// $('#select_month').selectric({
+	// 	disableOnMobile: false,
 	// 	onChange: function(){
-	// 		console.log("aa");
 	// 		var month;
 	// 		var days;
 	// 		month = $("#select_month").val();
@@ -174,7 +172,6 @@ $(document).ready(function(){
 	// 		}
 	// 	}
 	// });
-	    // e.preventDefault();
 
 });
 
