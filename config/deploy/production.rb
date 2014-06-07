@@ -21,7 +21,7 @@ server 'm4.mnv.kr', user: 'deployer', roles: %w{web app db}# , my_property: :my_
 # you can see them in [net/ssh documentation](http://net-ssh.github.io/net-ssh/classes/Net/SSH.html#method-c-start)
 # set it globally
 set :ssh_options, {
-  keys: %w(/Users/daul/.ssh/ids/m4.mnv.kr/deployer/id_rsa),
+  keys: %w(/Users/kimp/.ssh/id_rsa),
   forward_agent: false
   # use_agent: false
   # auth_methods: %w(password)

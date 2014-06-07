@@ -15,7 +15,6 @@
             </tr>
           </thead>
           <tbody>
-						<%= render "traffic_stats_table"%>
             <% @traffic_stats.each do |traffic_stat| %>
 							<% if traffic_stat.created_date > DateTime.parse("2014.4.2") %>
 								<% if traffic_stat.created_date == DateTime.parse("2014.4.3") %>
@@ -71,7 +70,6 @@
             </tr>
           </thead>
           <tbody>
-						<%= render "viral_stats_table" %>
             <% @viral_stats.each do |viral_stat| %>
 							<% if viral_stat.created_date > DateTime.parse("2014.4.2") %>
 								<% if viral_stat.created_date == DateTime.parse("2014.4.3") %>
@@ -118,7 +116,6 @@
             </tr>
           </thead>
           <tbody>
-						<%= render "user_stats_table"%>
             <% @user_stats.each do |user_stat| %>
 							<% if user_stat.created_date > DateTime.parse("2014.4.2") %>
 								<% if user_stat.created_date == DateTime.parse("2014.4.3") %>
