@@ -224,8 +224,8 @@ GEM
       colorize
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
-    sucker_punch (1.0.2)
-      celluloid (~> 0.15.1)
+    sucker_punch (1.0.5)
+      celluloid (~> 0.15.2)
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
       ref

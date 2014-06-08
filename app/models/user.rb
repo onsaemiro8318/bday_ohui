@@ -1,8 +1,5 @@
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable
   has_many :messages
   has_many :access_logs
   has_one :coupon
@@ -13,12 +10,7 @@ class User < ActiveRecord::Base
   validates :phone, uniqueness: true
   validates :birthday, presence: true
 
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable # :registerable
-  # dragonfly_accessor :last_sign_in_ip
-  # image_accessor :last_sign_in_ip
-
+  attr_accessor :birthday_month, :birthday_day
   def send_survey
     Message.send_survey_to(self)
   end
