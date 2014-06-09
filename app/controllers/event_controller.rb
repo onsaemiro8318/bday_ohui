@@ -1,0 +1,19 @@
+class EventController < ApplicationController
+  def open
+    open_time = DateTime.parse("2014-06-09 23:59:00 +0900")
+    result = "running"
+    result = "not_yet" if Time.now < open_time
+    respond_to do |format|
+      format.json { render json: {result: result}, status: :ok}
+    end
+  end
+  
+  def finish
+    finish_time = DateTime.parse("2014-07-13 23:58:00 +0900")
+    result = "running"
+    result = "finish" if Time.now > finish_time
+    respond_to do |format|
+      format.json { render json: {result: result}, status: :ok}
+    end
+  end
+end

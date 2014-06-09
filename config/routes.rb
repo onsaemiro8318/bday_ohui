@@ -51,9 +51,13 @@ Rails.application.routes.draw do
   
   root 'web_switch#index'
 
+  get 'event_open' => 'event#open'
+  get 'event_finish' => 'event#finish'
+
   get "/:code", to:"coupons#show", contraints:{code: /[a-z]{5}-\d{4}/}, as: "coupon"
   get "/:code/edit", to:"coupons#edit", contraints:{code: /[a-z]{5}-\d{4}/}, as: "edit_coupon"
   put "/:code", to:"coupons#update", contraints:{code: /[a-z]{5}-\d{4}/}, as: "update_coupon"
+  
   # resources :users
   devise_for :users
   resources :coupons, except: [:update, :edit, :show] do

@@ -275,3 +275,17 @@ function fb_analytics(){
 	  ref.parentNode.insertBefore(fpw, ref);
 	})();
 }
+
+function event_open(){
+	$.ajax({
+		type: 'get',
+		url: '/event_finish.json',
+		success: function (data) {
+			if(data.result == "not_yet"){
+				return "not_yet";
+			}else{
+				return "running"
+			}
+		}
+	});
+}
