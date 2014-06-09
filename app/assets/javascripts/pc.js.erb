@@ -1,9 +1,4 @@
-$(document).ready(function(){
-	
-  // ga(['_trackEvent', 'button', 'click', 'img down 1546']);
-  // loadJsFile('http://i42.icast-ad.com/track?ccd=1242&mcd=01040601&pcd=1546');
-	
-	
+$(document).ready(function(){	
 	var clip = new ZeroClipboard( $(".copy_html"), {
 		moviePath: "<%= asset_path('ZeroClipboard.swf') %>",
 		swfPath: "<%= asset_path('ZeroClipboard.swf') %>",
@@ -52,24 +47,14 @@ $(document).ready(function(){
   });
   $("#gift_button").click(function(e){
     e.preventDefault();
-		// alert("아쉽네요!\n다음엔 조금더 서둘러주세요~");
-		var finish_time = "2014-06-30 23:59:59 +0900";
-		$.ajax({
-			type: 'get',
-			url: '/current_time',
-			success: function (data) {
-				if(Date.parse(finish_time) < Date.parse(data.time)){
-					alert("아쉽네요!\n다음엔 조금더 서둘러주세요~");
-				}else{
-		      $("#popup_info").bPopup({
-		        follow: [false, false], //x, y
-		        position: ['auto', 60], //x, y
-		        closeClass: 'b-close',
-		        modalColor: 'black'
-		      });
-				}
-			}
-		});
+		if(event_open() == "running"){
+	    $("#popup_info").bPopup({
+	      follow: [false, false], //x, y
+	      position: ['auto', 60], //x, y
+	      closeClass: 'b-close',
+	      modalColor: 'black'
+	    });
+		}
     ga('send', 'event', 'button', 'click', '피부 선물 받기');
   });
 
@@ -138,10 +123,11 @@ $(document).ready(function(){
 
   $("#blog_share_link").click(function(e){
     e.preventDefault();
-		// alert('아쉽네요!\n 다음엔 조금더 서둘러주세요~');
-    $("#popup_blog").modal({
-      closeClass: 'b-close',
-    });
+		if(event_open() == "running"){
+	    $("#popup_blog").modal({
+	      closeClass: 'b-close',
+	    });
+		}
     ga('send', 'event', 'button', 'click', 'pc 블로그로 공유하기 버튼');
   });	
 		
@@ -160,18 +146,19 @@ $(document).ready(function(){
     FB.Canvas.setAutoGrow();
     $("#facebook_share_link").click(function(e){
       e.preventDefault();
-			// alert('아쉽네요!\n다음엔 조금더 서둘러주세요~');
-      $.ajax({
-        type: "POST",
-        url: "/viral_actions.json",
-        data: {
-          'viral_action[platform]': "Facebook",
-          'viral_action[device]': "pc"
-        },
-        success: function (data) {
-        }
-        });
-      share();
+			if(event_open() == "running"){
+	      $.ajax({
+	        type: "POST",
+	        url: "/viral_actions.json",
+	        data: {
+	          'viral_action[platform]': "Facebook",
+	          'viral_action[device]': "pc"
+	        },
+	        success: function (data) {
+	        }
+	        });
+	      share();
+			}
     });
   });	
 });
@@ -186,11 +173,14 @@ function event_open(){
 		success: function (data) {
 		}
 	});
+	if(result.responseJSON.result == "not_yet"){
+		alert("이벤트 오픈: 6월 10일");
+	}
 	return result.responseJSON.result;
 }
 
-function twitter_share()
-{
+function twitter_share(){
+	
   $.ajax({
     type: "POST",
     url: "/viral_actions.json",
@@ -200,7 +190,7 @@ function twitter_share()
     },
     success: function (data) {
     }
-    });
+  });
 }
 
 function blog_share()
