@@ -10,8 +10,8 @@ set :scm_user, "onesup"
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, "/home/deployer/www/bday_june"
-set :user, "deployer"
+set :deploy_to, "/home/onesup/www/bday_june"
+set :user, "onesup"
 
 
 # Default value for :scm is :git
@@ -39,7 +39,7 @@ set :default_env, {
 }
 
 set :rbenv_type, :user
-set :rbenv_ruby, "2.1.1"
+set :rbenv_ruby, "2.1.2"
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
