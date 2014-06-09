@@ -130,6 +130,16 @@ $(document).ready(function(){
 		}
     ga('send', 'event', 'button', 'click', 'pc 블로그로 공유하기 버튼');
   });	
+	
+  $("#twitter_share_link").click(function(e){
+    e.preventDefault();
+		var text = $(this).attr("data-text");
+		var url = $(this).attr("data-url");
+		if(event_open() == "running"){
+	    twitter_share(text, url);
+		}
+    ga('send', 'event', 'button', 'click', 'twitter 공유하기 버튼');
+  });	
 		
   $("#info_phone").mask("999-9999-9999");
   
@@ -179,7 +189,8 @@ function event_open(){
 	return result.responseJSON.result;
 }
 
-function twitter_share(){
+function twitter_share(text, url){
+	window.open("https://twitter.com/intent/tweet?url="+encodeURIComponent(url)+"&text="+encodeURIComponent(text)+ "&count=none/", "", "height=300, width=550, resizable=1");
 	
   $.ajax({
     type: "POST",
