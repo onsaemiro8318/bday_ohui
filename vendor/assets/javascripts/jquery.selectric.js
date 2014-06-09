@@ -69,7 +69,7 @@
           );
 
         var $original = $(element),
-            _input = $('<input type="text" class="' + arrClasses[0] + '"/>'),
+            _input = $('<input type="text" readonly="true" class="' + arrClasses[0] + '"/>'),
             $wrapper = $('<div class="' + customClass.prefix + '"><p class="label"/>' + options.arrowButtonMarkup + '</div>'),
             $items = $('<div class="' + arrClasses[1] + '" tabindex="-1"></div>'),
             $outerWrapper = $original.data(pluginName, true).wrap('<div>').parent().append($wrapper.add($items).add(_input)),

@@ -12,6 +12,9 @@ $(document).ready(function(){
 		debug: false
 	} );
 	
+	$('.select_custom_1').selectric();
+	$('.select_custom_2').selectric('refresh');
+
 	clip.on("load", function (clip) {
 		clip.on( "complete", function(clip, args) {
 			blog_share();
@@ -271,4 +274,18 @@ function fb_analytics(){
 	  var ref = document.getElementsByTagName('script')[0];
 	  ref.parentNode.insertBefore(fpw, ref);
 	})();
+}
+
+function event_open(){
+	$.ajax({
+		type: 'get',
+		url: '/event_finish.json',
+		success: function (data) {
+			if(data.result == "not_yet"){
+				return "not_yet";
+			}else{
+				return "running"
+			}
+		}
+	});
 }

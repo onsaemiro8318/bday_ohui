@@ -28,7 +28,6 @@
           </tr>
         </thead>
         <tbody>
-          <%= render "traffic_stats_table" %>
            <% @traffic_stats.each do |t| %>
 						<% if t.created_date > DateTime.parse("2014.4.3") %>
 							<% if t.created_date == DateTime.parse("2014.4.4") %>
