@@ -38,7 +38,17 @@ $(document).ready(function(){
 	
 	$("#kakaotalk_share_link").click(function(e){
 		e.preventDefault();
-		// alert('아쉽네요!\n 다음엔 조금더 서둘러주세요~');
+		if(event_open()=="running"){
+			kakao.link("talk").send({
+				msg : "여름에 꼭 한번 써보고\n싶었던 숨37 젤 크림!\n피부생일 선물로 준다고!?\n\nMake Your Skin Birthday\nSponsored by 숨37\n",
+				url : "http://bit.ly/su-m37-kt",
+				appid : "skin_birthday",
+				appver : "1.0",
+				appname : "",
+				type : "link"
+			});
+		}
+
 		$.ajax({
 			type: "POST",
 			url: "/viral_actions.json",
@@ -48,14 +58,6 @@ $(document).ready(function(){
 			},
 			success: function (data) {
 			}
-		});
-		kakao.link("talk").send({
-			msg : "여름에 꼭 한번 써보고\n싶었던 숨37 젤 크림!\n피부생일 선물로 준다고!?\n\nMake Your Skin Birthday\nSponsored by 숨37\n",
-			url : "http://bit.ly/su-m37-kt",
-			appid : "skin_birthday",
-			appver : "1.0",
-			appname : "",
-			type : "link"
 		});
 	});
 
