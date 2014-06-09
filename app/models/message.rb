@@ -139,7 +139,7 @@ https://birthday.su-m37.co.kr/survey?p="+phone+"
 20ml 쿠폰 사용 기간이 
 이제 6일 남았어요.
 
-쿠폰 사용기간 : ~ 7월 20일(일)
+쿠폰 사용기간 : ~ 7월 27일(일)
  
 쿠폰받기: https://birthday.su-m37.co.kr/"+coupon.code+"
  
@@ -167,7 +167,7 @@ https://birthday.su-m37.co.kr/survey?p="+phone+"
 제외됩니다.
 
 쿠폰 사용기간 : 
-~7월 20일(일)까지
+~7월 27일(일)까지
 
 쿠폰받기:" + Rails.application.secrets.url + "/" + coupon.code +
 "
