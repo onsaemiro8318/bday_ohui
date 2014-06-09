@@ -14,18 +14,19 @@ $(document).ready(function(){
 		FB.Canvas.setAutoGrow();
 		$("#facebook_share_link").click(function(e){
 			e.preventDefault();
-			// alert('아쉽네요!\n다음엔 조금더 서둘러주세요~');
-			$.ajax({
-				type: "POST",
-				url: "/viral_actions.json",
-				data: {
-					'viral_action[platform]': "Facebook",
-					'viral_action[device]': "mobile"
-				},
-				success: function (data) {
-				}
-			});
-			share();
+			if(event_open()=="running"){
+				$.ajax({
+					type: "POST",
+					url: "/viral_actions.json",
+					data: {
+						'viral_action[platform]': "Facebook",
+						'viral_action[device]': "mobile"
+					},
+					success: function (data) {
+					}
+				});
+				share();
+			}
 		});
 	});
 	
@@ -89,7 +90,7 @@ $(document).ready(function(){
 	      urlinfo : JSON.stringify({
 	        title:"Skin Birthday",
 	        desc:"Make Your Skin Birthday Sponsored by 숨37",
-	        imageurl:['https://<%= Rails.application.secrets.url + asset_url("sns/facebook_share.jpg") %>'],
+	        imageurl:['https://<%= Rails.application.secrets.url%><%=asset_url("sns/facebook_share.jpg") %>'],
 	        type:"article"
 	      })
 	    });
@@ -143,7 +144,7 @@ function share() {
     method: "feed",
     name: "Skin Birthday",
     link: "<%= Rails.application.secrets.url %>?s=fb",
-    picture: '<%= Rails.application.secrets.url + asset_url("sns/facebook_share.jpg") %>',
+    picture: '<%= Rails.application.secrets.url %><%= asset_url("sns/facebook_share.jpg") %>',
     caption: "Make your skin birthday Sponsored by 숨37",
     description: text
   };
