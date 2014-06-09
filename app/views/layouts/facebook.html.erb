@@ -5,8 +5,8 @@
   
   <%= yield :mobile %>
 
-  <%= stylesheet_link_tag    'facebook', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'facebook', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'facebook', media: 'all'%>
+  <%= javascript_include_tag 'facebook'%>
   <%= csrf_meta_tags %>
   <meta property="fb:app_id" content="<%= Rails.application.secrets.fb_app_id %>" />
   <meta property="og:type"   content="myapp:myobject" />
