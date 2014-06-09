@@ -174,10 +174,20 @@ $(document).ready(function(){
       share();
     });
   });	
-
 });
 
 
+function event_open(){
+	var result;
+	result = $.ajax({
+		async: false,
+		type: 'get',
+		url: '/event_open.json',
+		success: function (data) {
+		}
+	});
+	return result.responseJSON.result;
+}
 
 function twitter_share()
 {
@@ -274,18 +284,4 @@ function fb_analytics(){
 	  var ref = document.getElementsByTagName('script')[0];
 	  ref.parentNode.insertBefore(fpw, ref);
 	})();
-}
-
-function event_open(){
-	$.ajax({
-		type: 'get',
-		url: '/event_finish.json',
-		success: function (data) {
-			if(data.result == "not_yet"){
-				return "not_yet";
-			}else{
-				return "running"
-			}
-		}
-	});
 }
