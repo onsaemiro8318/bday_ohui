@@ -31,34 +31,24 @@ $(document).ready(function(){
 	
 	$("#gift_button").click(function(e){
 		e.preventDefault();
-		// alert("아쉽네요!\n다음엔 조금더 서둘러주세요~");
-		var finish_time = "2014-04-30 23:59:59 +0900";
-		$.ajax({
-			type: 'get',
-			url: '/current_time',
-			success: function (data) {
-				// if(Date.parse(finish_time) < Date.parse(data.time)){
-				// 	alert("아쉽네요!\n다음엔 조금더 서둘러주세요~");
-				// }else{
-					window.location.href = "/mobile/users/new"; 
-				// }
-			}
-		});
+		if(event_open()=="running"){
+			window.location.href = "/mobile/users/new"; 
+		}
 	});
 	
 	$("#kakaotalk_share_link").click(function(e){
 		e.preventDefault();
 		// alert('아쉽네요!\n 다음엔 조금더 서둘러주세요~');
-    $.ajax({
-      type: "POST",
-      url: "/viral_actions.json",
-      data: {
-        'viral_action[platform]': "Kakaotalk",
-        'viral_action[device]': "mobile"
-      },
-      success: function (data) {
-      }
-      });
+		$.ajax({
+			type: "POST",
+			url: "/viral_actions.json",
+			data: {
+				'viral_action[platform]': "Kakaotalk",
+				'viral_action[device]': "mobile"
+			},
+			success: function (data) {
+			}
+		});
 		kakao.link("talk").send({
 			msg : "여름에 꼭 한번 써보고\n싶었던 숨37 젤 크림!\n피부생일 선물로 준다고!?\n\nMake Your Skin Birthday\nSponsored by 숨37\n",
 			url : "http://bit.ly/su-m37-kt",
@@ -204,4 +194,19 @@ function range(lowEnd, highEnd){
 	    list.push(i);
 	}
 	return list;
+}
+
+function event_open(){
+	var result;
+	result = $.ajax({
+		async: false,
+		type: 'get',
+		url: '/event_open.json',
+		success: function (data) {
+		}
+	});
+	if(result.responseJSON.result == "not_yet"){
+		alert("이벤트 오픈: 6월 12일");
+	}
+	return result.responseJSON.result;
 }
