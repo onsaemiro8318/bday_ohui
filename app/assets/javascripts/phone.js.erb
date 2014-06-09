@@ -80,30 +80,32 @@ $(document).ready(function(){
 	
   $("#kakaostory_share_link").click(function(e){
     e.preventDefault();
-		// alert('아쉽네요!\n 다음엔 조금더 서둘러주세요~');
-    $.ajax({
-      type: "POST",
-      url: "/viral_actions.json",
-      data: {
-        'viral_action[platform]': "Kakaostory",
-        'viral_action[device]': "mobile"
-      },
-      success: function (data) {
-      }
-      });
-    kakao.link("story").send({
-      post : "여름에 꼭 한번 써보고\n싶었던 숨37 젤 크림!\n피부생일 선물로 준다고!?\nhttp://bit.ly/su-m37-ks",
-      appid : "skin_birthday",
-      appver : "1.0",
-      appname : "Skin Birthday",
-      urlinfo : JSON.stringify({
-        title:"Skin Birthday",
-        desc:"Make Your Skin Birthday Sponsored by 숨37",
-        imageurl:['https://<%= Rails.application.secrets.url + asset_url("sns/facebook_share.jpg") %>'],
-        type:"article"
-      })
-    });
-  });
+		if(event_open == "running"){
+	    kakao.link("story").send({
+	      post : "여름에 꼭 한번 써보고\n싶었던 숨37 젤 크림!\n피부생일 선물로 준다고!?\nhttp://bit.ly/su-m37-ks",
+	      appid : "skin_birthday",
+	      appver : "1.0",
+	      appname : "Skin Birthday",
+	      urlinfo : JSON.stringify({
+	        title:"Skin Birthday",
+	        desc:"Make Your Skin Birthday Sponsored by 숨37",
+	        imageurl:['https://<%= Rails.application.secrets.url + asset_url("sns/facebook_share.jpg") %>'],
+	        type:"article"
+	      })
+	    });
+		}
+		$.ajax({
+			type: "POST",
+			url: "/viral_actions.json",
+			data: {
+				'viral_action[platform]': "Kakaostory",
+				'viral_action[device]': "mobile"
+			},
+			success: function (data) {
+			}
+		});
+
+	});
 	$('#select_month').change(function(e){
 		var month;
 		var days;
@@ -131,40 +133,6 @@ $(document).ready(function(){
 			});
 		}	
 	});
-	// $("#select_day").selectric({disableOnMobile: false});
-	// $('#select_month').selectric({
-	// 	disableOnMobile: false,
-	// 	onChange: function(){
-	// 		var month;
-	// 		var days;
-	// 		month = $("#select_month").val();
-	// 		d = new Date();
-	// 		this_day = d.getDate();
-	// 		if(month === '6'){
-	// 			add_days = range(this_day, 30);
-	// 			console.log(add_days);
-	// 			$("#select_day option").remove();
-	// 			$.each(add_days, function( index, value ){
-	// 				$("#select_day").append($('<option>',{
-	// 					value:value,
-	// 					text:value
-	// 				}));
-	// 			});
-	// 			$("#select_day").selectric('refresh');
-	// 		}else if(month === '7'){
-	// 			add_days = range(1, 20);
-	// 			$("#select_day option").remove();
-	// 			$.each(add_days, function( index, value ){
-	// 				$("#select_day").append($('<option>',{
-	// 					value:value,
-	// 					text:value
-	// 				}));
-	// 			});
-	// 			$("#select_day").selectric('refresh');
-	// 		}
-	// 	}
-	// });
-
 });
 
 
