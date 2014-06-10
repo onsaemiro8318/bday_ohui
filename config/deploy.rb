@@ -1,7 +1,11 @@
 # config valid only for Capistrano 3.1
 lock '3.2.1'
 
-set :application, 'bday_june'
+if fetch(:rails_env) == :production
+  set :application, 'bday_june'
+else
+  set :application, 'bday_june_staging'
+end
 set :repo_url, 'git@github.com:onesup/bday_june.git'
 set :scm_user, "onesup"
 
