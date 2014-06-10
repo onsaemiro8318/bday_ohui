@@ -1,14 +1,8 @@
 # config valid only for Capistrano 3.1
 lock '3.2.1'
-
-if fetch(:rails_env) == :production
-  set :application, 'bday_june'
-else
-  set :application, 'bday_june_staging'
-end
+set :application, 'bday_june'
 set :repo_url, 'git@github.com:onesup/bday_june.git'
 set :scm_user, "onesup"
-
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
@@ -16,7 +10,6 @@ set :scm_user, "onesup"
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, "/home/onesup/www/bday_june"
 set :user, "onesup"
-
 
 # Default value for :scm is :git
 # set :scm, :git
