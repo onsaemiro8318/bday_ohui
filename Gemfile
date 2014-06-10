@@ -9,7 +9,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'unicorn'
 gem 'net-ssh', '2.8.0'
 # gem 'turbolinks'
-# gem "therubyracer", "~> 0.12"
+gem "therubyracer", "~> 0.12.1"
 gem 'execjs'
 gem 'mysql2'
 gem 'bootstrap-sass', '~> 2.3.2.2'
