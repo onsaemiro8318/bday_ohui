@@ -1,6 +1,6 @@
 namespace :load do
   task :defaults do
-    if fetch(:rails_env) == "production"
+    if fetch(:rails_env) == :production
       set :nginx_server_name, -> { 'birthday.su-m37.co.kr' }
     else
       set :nginx_server_name, -> { 'bday.mnv.kr' }
