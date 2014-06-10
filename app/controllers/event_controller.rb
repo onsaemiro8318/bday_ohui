@@ -1,6 +1,10 @@
 class EventController < ApplicationController
   def open
-    open_time = DateTime.parse("2014-06-11 23:59:00 +0900")
+    if Rails.env == "production"
+      open_time = DateTime.parse("2014-06-11 23:59:00 +0900")
+    else
+      open_time = DateTime.parse("2014-06-01 23:59:00 +0900")
+    end
     result = "running"
     result = "not_yet" if Time.now < open_time
     respond_to do |format|

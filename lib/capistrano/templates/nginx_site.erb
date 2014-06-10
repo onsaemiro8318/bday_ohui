@@ -5,15 +5,8 @@ upstream unicorn_<%= fetch :application %> {
 server{
 	listen 443 default ssl;	
 	server_name birthday.su-m37.co.kr birthday.su-m37.com bday.mnv.kr;
-	
-	# if ($server_name = <%= fetch :nginx_ssl_certificate %>) {
-		ssl_certificate /etc/ssl/certs/<%= fetch :nginx_ssl_certificate %>;
-		ssl_certificate_key /etc/ssl/private/<%= fetch :nginx_ssl_certificate_key %>;
-	# }
-	# if ($server_name = bday.mnv.kr) {
-	# 	ssl_certificate /etc/ssl/certs/bday.mnv.kr;
-	# 	ssl_certificate_key /etc/ssl/private/bday.mnv.kr;
-	# }
+	ssl_certificate /etc/ssl/certs/<%= fetch :nginx_ssl_certificate %>;
+	ssl_certificate_key /etc/ssl/private/<%= fetch :nginx_ssl_certificate_key %>;
 	ssl_session_timeout 5m;
 	ssl_protocols SSLv2 SSLv3 TLSv1;
 	ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;

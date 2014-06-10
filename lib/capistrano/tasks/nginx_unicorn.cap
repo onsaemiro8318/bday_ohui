@@ -19,7 +19,6 @@ namespace :load do
     set :unicorn_user, -> { fetch(:user) }
     set :unicorn_workers, 5
     set :unicorn_rack_env, -> { fetch(:rails_env) }
-    # set :unicorn_rack_env, -> { 'production' }# == 'production' ? 'production' : 'staging' }
   end
 end
 
