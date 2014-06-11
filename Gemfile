@@ -23,7 +23,7 @@ gem 'json'
 gem 'nokogiri'
 gem 'nori' #xml parser
 gem 'useragent'
-
+gem 'activerecord-session_store'
 gem 'sucker_punch', '~> 1.0'
 gem 'font-awesome-rails'
 gem 'kaminari'
