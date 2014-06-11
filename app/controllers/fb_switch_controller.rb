@@ -11,13 +11,6 @@ class FbSwitchController < ApplicationController
     user_agent = UserAgent.parse(request.user_agent)
     source = params[:s] || "-"
     if user_agent.mobile?
-      # device = "mobile"
-      # @traffic_log = TrafficLog.new
-      # @traffic_log.ip = request.remote_ip 
-      # @traffic_log.device = device
-      # @traffic_log.referer = referer
-      # @traffic_log.source = source
-      # @traffic_log.save
       redirect_to mobile_index_path({s: params[:s]})
     else
       device = "pc"

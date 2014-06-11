@@ -96,11 +96,9 @@ $(document).ready(function(){
         position: ['auto', 70], //x, y
         onClose: function(){$("#popup_info").bPopup().close();}
       });
-    }
-    else{
+    }else{
       validation(errors);
     }
-    
   });
 
   $("#product_button").click(function(e){
@@ -109,7 +107,6 @@ $(document).ready(function(){
       closeClass: 'b-close',
     });
     ga('send', 'event', 'button', 'click', '제품 자세히 보기');
-
   });
 
   $("#qna_button").click(function(e){
@@ -118,7 +115,6 @@ $(document).ready(function(){
       closeClass: 'b-close',
     });
     ga('send', 'event', 'button', 'click', 'pc qna');
-
   });
 
   $("#blog_share_link").click(function(e){
