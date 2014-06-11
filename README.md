@@ -1,3 +1,4 @@
+오휘
 ```
 bundle exec cap install
 edit Capfile
