@@ -51,12 +51,12 @@ img{
 }
 
 .c_title{
-	padding:30px 0 25px;
+	padding:18px 0 3px;
 	text-align: center;
 }
 
 .btn_event{
-	padding-bottom:430px;
+	padding-bottom:495px;
 }
 
 .content_title{
@@ -69,7 +69,6 @@ img{
 
 .share_block{
     margin:0 auto;
-    background-image: asset-url("pc/btn_middle.png");
     width:719px;
     height:154px;	
 	position:relative;
@@ -82,21 +81,21 @@ img{
 }
 .share_block a.view_p{
 	top:84px;
-	left:47px;
-	width:112px;
-	height:33px;
+	left:105px;
+	width:104px;
+	height:30px;
 }
 .share_block a.s_blog{
-	top:67px;
-	right:50px;
+	top:88px;
+	right:150px;	
 }
 .share_block a.s_tw{
-	top:67px;
-	right:100px;
+	top:86px;
+	right:193px;
 }
 .share_block a.s_fb{
-	top:67px;
-	right:148px;
+	top:85px;
+	right:235px;
 }
 
 
@@ -113,7 +112,7 @@ img{
 }
 
 .product_new{
-	height:210px;
+	height:317px;
 }
 
 
@@ -380,7 +379,7 @@ img{
 
 .footer_custom{
   width: 100%;
-  background-color: #c0dbe6;
+  background-color: #eef1f3;
   text-align: center;
 }
 .footer_custom .inner{
@@ -393,7 +392,7 @@ img{
 .footer_custom .inner a{
 	position:absolute;
 	display:block;
-	top:263px;
+	top:266px;
 	left:335px;
 }
 
