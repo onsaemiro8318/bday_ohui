@@ -5,7 +5,7 @@ class Message < ActiveRecord::Base
   def self.send_to(coupon)
     message = self.new
     message.send_phone = Rails.application.secrets.send_phone
-    message.dest_phone = coupon.user.phone 
+    message.dest_phone = coupon.user.phone
     message.msg_body = self.send_message(coupon)
     message.subject = "Skin Birthday"
     message.send_name = coupon.user.name
@@ -159,16 +159,13 @@ CC쿠션 미니어처 쿠폰 사용 기간이
 CC쿠션 미니어처를 드립니다.
 
 쿠폰 사용기간 : ~ 8월 3일(일)
- 
-쿠폰받기:
-" + Rails.application.secrets.url + "/" + coupon.code +"
 
+쿠폰받기:
+" + Rails.application.secrets.url + "/" + coupon.code + "
 모바일 쿠폰 사용 유의사항
 · 본 행사는 첫 구매 고객에게만 제공되는 혜택입니다.(기존고객 제외)
 · 전국 백화점 매장(오프라인)에서만 사용 가능합니다.(면세점 제외)
-· 사은품은 중복 지급되지 않으며, 한정 수량으로 조기 품절 될 수 있습니다. 
-"
-
+· 사은품은 중복 지급되지 않으며, 한정 수량으로 조기 품절 될 수 있습니다."
   end
   
   def send_sms
