@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  change_image();
 	$("#info_phone").mask("999-9999-9999");
   $("#info_input_radio");
 	$.ajaxSetup({ cache: true });
@@ -140,11 +141,7 @@ $(document).ready(function(){
 
 
 function share() {
-<<<<<<< HEAD
-  var text = "첫 구매 고객님에게 선물로\n셀 파워 넘버원 에센스(35ml)와\nCC쿠션 미니어처를 드립니다.\nNEW FACE 오늘의 얼굴 \nSponsored by 오휘";
-=======
   var text = "지금 오휘에서\n셀 파워 넘버원 에센스와\nCC쿠션 미니어처를 선물로!!";
->>>>>>> b56ef0d49f6d1bb74454f128008aa75e232c8c80
   var share_content = {
     method: "feed",
     name: "NEW FACE",
@@ -186,4 +183,21 @@ function event_open(){
 		alert("이벤트 오픈: 6월 27일");
 	}
 	return result.responseJSON.result;
+}
+
+function change_image(){
+  $("#product1").click(function(e){
+    console.log("lll");
+    e.preventDefault();
+    $("#product_image1").attr("src", "<%= asset_path('pc/popup/product/navi_01_on.jpg') %>");
+    $("#product_image2").attr("src", '<%= asset_path("pc/popup/product/navi_02_off.jpg") %>');
+    $("#product_image").attr("src", '<%= asset_path("pc/popup/product/img_01.png") %>');
+  });
+  $("#product2").click(function(e){
+    console.log("lk");
+    e.preventDefault();
+    $("#product_image1").attr("src", "<%= asset_path('pc/popup/product/navi_01_off.jpg') %>");
+    $("#product_image2").attr("src", '<%= asset_path("pc/popup/product/navi_02_on.jpg") %>');
+    $("#product_image").attr("src", '<%= asset_path("pc/popup/product/img_02.png") %>');
+  });
 }

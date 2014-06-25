@@ -4,11 +4,11 @@
 	</div>
 	<div class="navi">
 		<ul class="clearfix">
-			<li><%= image_tag("mobile/new/navi_01_on.png") %></li>
-			<li><%= image_tag("mobile/new/navi_02_off.png") %></li>
+			<li><%= link_to(image_tag("mobile/new/navi_01_on.png", class:"product_nav_1",id:"product_image1"),"#", id:"product1") %></li>
+			<li><%= link_to(image_tag("mobile/new/navi_02_off.png", class:"product_nav_2",id:"product_image2"), "#", id:"product2") %></li>
 		</ul>	
 	</div>
 	<div class="container-product">
-		<%= image_tag("mobile/new/img_01.png") %>
+		<%= image_tag("mobile/new/img_01.png", id:"product_image") %>
 	</div>
 </div>
