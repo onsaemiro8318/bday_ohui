@@ -1,14 +1,14 @@
 # config valid only for Capistrano 3.1
 lock '3.2.1'
-set :application, 'bday_june'
-set :repo_url, 'git@github.com:onesup/bday_june.git'
+set :application, 'bday_ohui'
+set :repo_url, 'git@github.com:onesup/bday_ohui.git'
 set :scm_user, "onesup"
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, "/home/onesup/www/bday_june"
+set :deploy_to, "/home/onesup/www/bday_ohui"
 set :user, "onesup"
 
 # Default value for :scm is :git

@@ -2,6 +2,9 @@
 * Reset & Base
 *----------------------------------------------------*/
 *, body, div, ul, li {margin:0;padding:0;}
+body{
+	background: asset-url("mobile/popup/bg_common.png");
+}
 a {text-decoration: none;}
 div {position:relative;}
 img {border:0}
@@ -50,6 +53,7 @@ img {border:0}
 	width: 100%;
 	position:absolute;
 	z-index:2;
+	margin-top:33%;
 }
 .img_bg{
 	width: 100%;
@@ -76,18 +80,16 @@ img {border:0}
 .container-view {
 	position:relative;
 	width:100%;
-	text-align:center;
-	padding-top:62%;
+	padding-top:115%;
+	margin-bottom:14%;
 	.container-product-detail{
 		width:100%;
 		position:absolute;
 		top:83%;
+		padding-left:5%;
 		a img{
 			width:30%;
 		}
-	}
-	.view_bg{
-		width:92%;
 	}
 }
 
@@ -111,6 +113,7 @@ img {border:0}
 }
 
 .container-sum-sns{
+	padding-top:70%;
 	.left{
 		padding-top:76%;
 		padding-left:5%;
@@ -121,7 +124,7 @@ img {border:0}
 		}
 	}
 	.right{
-		width:45%;
+		width:42%;
 		padding-top:76%;
 		float:right;
 		padding-right:5%;
@@ -161,8 +164,20 @@ img {border:0}
 *----------------------------------------------------*/
 #product {
 	width: 100%;
-	.text-top {
-		width: 100%;
+	.navi{
+		width:90%;
+		margin:0 auto;
+		padding:5% 0 0;
+		ul
+		li{
+			float:left;
+			width:50%;
+			list-style:none;
+		}
+	}
+	.container-product{
+		width:90%;
+		margin:0 auto;
 	}
 }
 /*-----------------------------------------------------
@@ -175,10 +190,10 @@ img {border:0}
 	background: asset-url("mobile/popup/bg_common.png");
 
   .popup-birthday_text-top {
-    margin:20px 0 10px;
+    margin:30px 0 10px;
 	text-align:center;
 	img{
-	 width: 80%;
+	 width: 55%;
 		}	
 	}
 
@@ -192,7 +207,7 @@ img {border:0}
 			text-align:center;	
 			padding:0 0 2%;
 			.text-top2{
-				width: 90%;
+				width:65%;
 			}
 		}
 		.container-info-inner{
@@ -240,7 +255,7 @@ img {border:0}
 		text-align:center;
 		padding:10px 0 0;
 		img{
-			width:80%;
+			width:65%;
 		}
   	
 	}
@@ -425,46 +440,17 @@ img {border:0}
 * coupon_success.html.erb
 *----------------------------------------------------*/
 #coupon_success {
-
-	width: 480px;
-	margin: 0 auto;
-	padding: 5% 0 0; 
-	background: asset-url("mobile/popup/bg_common.png");
-}
-.container-logo {
-	margin-bottom: 5%;
-	padding-left:10px;
-}
-.container-logo .logo {
-	width: 80px; 
-}
-.coupon_tops{
-	text-align:center;
-	position:relative;
-	.text_coupon_top {
-		width:90%;
+	background:#fff;
+	.container-img img{
+		width:100%;
 	}
 }
 
 
-		  
-#coupon_success .container-product {
-	margin-bottom: 5%;
-	text-align:center;
-}
-#coupon_success .container-product .coupon_img{
-	margin-bottom:10px;
-}
-#coupon_success .container-product .coupon_imgs {
-	width: 90%;
-}
-#coupon_success .text_product_caution {
-	width: 90%; 
-}
 #coupon_success .bottom {
-	margin:10px 0 0;
-	padding: 20px 0;
-	background: white;
+	padding: 5% 0;
+	margin-top:-3%;
+	background: #efefef;
 	text-align:center;
 }
 #coupon_success .bottom .text_coupon_caution2 {
@@ -472,11 +458,11 @@ img {border:0}
 }
 #coupon_success .bottom .btn_coupon_use_before {
 	margin-top: 5%;
-	width: 90%; 
+	width: 80%; 
 }
 #coupon_success .bottom .btn_coupon_use_after {
 	margin-top: 5%;
-	width: 90%; 
+	width: 80%; 
 }
 
 
@@ -519,7 +505,7 @@ width: 50%;
 }
 
 .container-text_caution{
-	background:#c6d6da;
+	background:#d9dde0;
 	padding: 20px;
 	.text_caution{
 		width: 85%;
