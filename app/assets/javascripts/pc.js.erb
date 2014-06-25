@@ -241,13 +241,13 @@ function validation(errors){
 }
 
 function share() {
-  var text = "첫 구매 고객님에게\n워터-풀 타임리스 워터 젤 크림 (20ml)를 선물로 드립니다.";
+  var text = "첫 구매 고객님에게\n셀 파워 넘버원 에센스 (35ml)를 선물로 드립니다.";
   var share_content = {
     method: "feed",
     name: "Skin Birthday",
     link: "<%= Rails.application.secrets.url %>?s=fb",
     picture: 'https://<%= Rails.application.secrets.url %><%=asset_url("sns/facebook_share.jpg") %>',
-    caption: "Make your skin birthday Sponsored by 숨37",
+    caption: "o hui",
     description: text
   };
   FB.ui(share_content, function(response) {
