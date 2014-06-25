@@ -41,8 +41,8 @@ $(document).ready(function(){
 		e.preventDefault();
 		if(event_open()=="running"){
 			kakao.link("talk").send({
-				msg : "오휘에서\n셀 파워 넘버원 에센스(35ml)와 CC쿠션 미니어처를 선물로!!",
-				url : "http://bit.ly/su-m37-kt",
+				msg : "지금 오휘에서\n셀 파워 넘버원 에센스와\nCC쿠션 미니어처를 선물로!!",
+				url : "http://bit.ly/ohui_kt",
 				appid : "new_face",
 				appver : "1.0",
 				appname : "",
@@ -83,7 +83,7 @@ $(document).ready(function(){
     e.preventDefault();
 		if(event_open == "running"){
 	    kakao.link("story").send({
-	      post : "오휘에서\n셀 파워 넘버원 에센스(35ml)와 CC쿠션 미니어처를 선물로!!\nhttp://bit.ly/su-m37-ks",
+	      post : "지금 오휘에서\n셀 파워 넘버원 에센스와\nCC쿠션 미니어처를 선물로!!\n\nhttp://bit.ly/ohui_ks",
 	      appid : "new_face",
 	      appver : "1.0",
 	      appname : "NEW FACE",
@@ -139,13 +139,13 @@ $(document).ready(function(){
 
 
 function share() {
-  var text = "오휘에서\n셀 파워 넘버원 에센스(35ml)와 CC쿠션 미니어처를 선물로!!";
+  var text = "지금 오휘에서\n셀 파워 넘버원 에센스와\nCC쿠션 미니어처를 선물로!!";
   var share_content = {
     method: "feed",
     name: "NEW FACE",
     link: "<%= Rails.application.secrets.url %>?s=fb",
     picture: '<%= Rails.application.secrets.url %><%= asset_url("sns/facebook_share.jpg") %>',
-    caption: "Make your skin birthday Sponsored by 숨37",
+    caption: "오늘부터 새로운 얼굴을 선물합니다",
     description: text
   };
   FB.ui(share_content, function(response) {
