@@ -1,4 +1,5 @@
 $(document).ready(function(){	
+  change_image();
 	var clip = new ZeroClipboard( $(".copy_html"), {
 		moviePath: "<%= asset_path('ZeroClipboard.swf') %>",
 		swfPath: "<%= asset_path('ZeroClipboard.swf') %>",
@@ -281,4 +282,21 @@ function fb_analytics(){
 	  var ref = document.getElementsByTagName('script')[0];
 	  ref.parentNode.insertBefore(fpw, ref);
 	})();
+}
+
+function change_image(){
+  $("#product1").click(function(e){
+    console.log("lll");
+    e.preventDefault();
+    $("#product_image1").attr("src", "<%= asset_path('pc/popup/product/navi_01_on.jpg') %>");
+    $("#product_image2").attr("src", '<%= asset_path("pc/popup/product/navi_02_off.jpg") %>');
+    $("#product_image").attr("src", '<%= asset_path("pc/popup/product/img_01.png") %>');
+  });
+  $("#product2").click(function(e){
+    console.log("lk");
+    e.preventDefault();
+    $("#product_image1").attr("src", "<%= asset_path('pc/popup/product/navi_01_off.jpg') %>");
+    $("#product_image2").attr("src", '<%= asset_path("pc/popup/product/navi_02_on.jpg") %>');
+    $("#product_image").attr("src", '<%= asset_path("pc/popup/product/img_02.png") %>');
+  });
 }

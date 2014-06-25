@@ -4,11 +4,11 @@
 	<% end %>
 	<div>
 		<ul class="navi clearfix">
-			<li><%= image_tag("pc/popup/product/navi_01_on.jpg") %></li>
-			<li><%= image_tag("pc/popup/product/navi_02_off.jpg") %></li>
+			<li><%= link_to(image_tag("pc/popup/product/navi_01_on.jpg", id:"product_image1"),'#', id:"product1") %></li>
+			<li><%= link_to(image_tag("pc/popup/product/navi_02_off.jpg", id:"product_image2"),'#', id:"product2") %></li>
 		</ul>
-		<div class="img">
-			<%= image_tag("pc/popup/product/img_01.png") %>
+    <div id="products_carousel" class="img">	
+      	<div class="item"><%= image_tag("pc/popup/product/img_01.png", id:"product_image") %></div>
 		</div>
 	</div>
 </div>
