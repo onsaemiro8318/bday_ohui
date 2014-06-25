@@ -316,9 +316,19 @@ img{
   display: none;
   width: 451px;
   height: 550px;
-  background-image: asset-url("pc/popup/product/bg.png");
+  background-image: asset-url("pc/bg_common.png");
   text-align: center;
 }
+#popup_product ul{
+	width:369px;
+	margin:0 auto;
+	padding-top:55px;
+}
+#popup_product ul li{
+	float:left;
+	list-style:none;
+}
+
 
 #popup_qna{
   display: none;

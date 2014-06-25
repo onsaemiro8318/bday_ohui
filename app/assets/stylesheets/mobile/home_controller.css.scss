@@ -83,12 +83,11 @@ img {border:0}
 	padding-top:115%;
 	margin-bottom:14%;
 	.container-product-detail{
-		width:100%;
 		position:absolute;
 		top:83%;
-		padding-left:5%;
+		left:5%;
 		a img{
-			width:30%;
+			width:50%;
 		}
 	}
 }
@@ -167,7 +166,7 @@ img {border:0}
 	.navi{
 		width:90%;
 		margin:0 auto;
-		padding:5% 0 0;
+		padding:7% 0 0;
 		ul
 		li{
 			float:left;
@@ -178,6 +177,7 @@ img {border:0}
 	.container-product{
 		width:90%;
 		margin:0 auto;
+		padding-bottom:15%;
 	}
 }
 /*-----------------------------------------------------
