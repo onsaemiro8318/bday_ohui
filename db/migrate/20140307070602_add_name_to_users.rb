@@ -4,5 +4,6 @@ class AddNameToUsers < ActiveRecord::Migration
     add_column :users, :phone, :string, :null => false
     add_column :users, :birthday, :datetime
     add_column :users, :access_logs_count, :integer
+    add_column :users, :source, :string
   end
 end
