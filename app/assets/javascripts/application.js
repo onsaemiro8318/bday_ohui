@@ -19,5 +19,6 @@
 //= require jquery.selectric
 //= require jquery.maskedinput.min
 //= require jquery.modal
+//= require owl.carousel
 //= require ZeroClipboard
 //= require pc
