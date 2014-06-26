@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   
   validates :agree, acceptance: true
   validates :agree2, acceptance: true
-  validates :birthday, presence: true
+  # validates :birthday, presence: true
   validates :name, presence: true
   validates :phone, presence: true
   validates :phone, uniqueness: true

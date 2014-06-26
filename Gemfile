@@ -27,7 +27,7 @@ gem 'activerecord-session_store'
 gem 'sucker_punch', '~> 1.0'
 gem 'font-awesome-rails'
 gem 'kaminari'
-
+gem 'writeexcel'
 # gem 'debugger', group: [:development, :test]
 # gem 'dragonfly', "~>1.0.3"
 gem 'koala'

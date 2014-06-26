@@ -18,21 +18,21 @@ class Message < ActiveRecord::Base
     return message
   end
   
-  def self.send_retention_to(coupon)
+  def self.send_retention_to(user)
     message = self.new
     message.send_phone = Rails.application.secrets.send_phone
-    message.dest_phone = coupon.user.phone 
-    message.msg_body = self.send_retention(coupon)
+    message.dest_phone = user.phone
+    message.msg_body = self.send_retention()
     message.subject = "Skin Birthday"
-    message.send_name = coupon.user.name
-    message.sent_at = Time.now + 5.seconds
+    message.send_name = user.name
+    message.sent_at = Time.now + 3.seconds
     message.save
-    message.user = coupon.user
-    message.coupon = coupon
+    message.user = user
     message.save
     result = message.send_lms
     message.cmid = result["cmid"]
     message.result = result["result_code"]
+    message.save
     return message
   end
   
@@ -131,22 +131,23 @@ https://birthday.su-m37.co.kr/survey?p="+phone+"
     return message
   end
   
-  def self.send_retention(coupon)
+  def self.send_retention
     "
-서둘러주세요!
- 
-셀 파워 넘버원 에센스(35ml)와
-CC쿠션 미니어처 쿠폰 사용 기간이 
-이제 6일 남았어요.
+    [Skin Birthday]
+    숨37, 이번엔 수분크림!
+    올 여름 워터젤 크림을 
+    선물로 받아보세요! 
 
-쿠폰 사용기간 : ~ 8월 3일(일)
+    쿠폰 받기: 
+    https://birthday.su-m37.co.kr/mobile/index?s=lms1
 
-쿠폰받기: //ohui-newface.co.kr/"+coupon.code+"
- 
-모바일 쿠폰 사용 유의사항
-· 본 행사는 첫 구매 고객에게만 제공되는 혜택입니다.(기존고객 제외)
-· 전국 백화점 매장(오프라인)에서만 사용 가능합니다.(면세점 제외)
-· 사은품은 중복 지급되지 않으며, 한정 수량으로 조기 품절 될 수 있습니다. 
+    해당 쿠폰은 숨37 브랜드 첫 구매 고객만 사용 가능합니다.
+    숨37 멤버십에 가입하셔야 혜택을 누릴 수 있습니다.
+    전국 백화점 매장에서만 사용가능합니다.
+    쿠폰은 한정 수량으로 조기 소진될 수 있습니다.
+    1인 1회 한정
+
+    수신거부 : 080-863-5542
 "
   end
   
@@ -223,11 +224,6 @@ CC쿠션 미니어처를 드립니다.
     during_time = 0
     puts res
     return JSON.parse(res)
-    # while call_status.empty? or call_status == "result is null" or during_time < 3.minutes
-    #   sleep(10.seconds)
-    #   call_status = report(cmid, time)
-    #   during_time = Time.now - start
-    # end
   end
   
   def waiting_for_result(interval_time, finish_time)
@@ -244,13 +240,12 @@ CC쿠션 미니어처를 드립니다.
     return result
   end
   
-  def report(cmid, time)
+  def report
     api_key = Rails.application.secrets.apistore_key
-    url = "http://api.openapi.io/ppurio/1/message/report/minivertising?cmid="+cmid
+    url = "http://api.openapi.io/ppurio/1/message/report/minivertising?cmid="+self.cmid
     result = RestClient.get(url, 'x-waple-authorization' => api_key)
     call_status = JSON.parse(result)["call_status"].to_s
-    self.sent_at = time
-    self.cmid = cmid
+    # self.sent_at = time
     self.result = result
     self.call_status = call_status
     self.save!    
