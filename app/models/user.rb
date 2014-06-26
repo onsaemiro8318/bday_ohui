@@ -60,16 +60,5 @@ class User < ActiveRecord::Base
       sum(case when users.device = 'mobile' then 1 else 0 end) as mobile_count, 
       count(*) as total_count")
   end
-  
-  def self.user_120
-    phones = Array.new
-    User.where(phone: User.coupon_users).each do |user|
-      phones << user.phone
-    end
-    user_120 = User.coupon_users - phones
-  end
-  
-  def self.coupon_users
-    ['010-8812-5111']
-  end
+    
 end
