@@ -256,7 +256,7 @@ function share() {
     method: "feed",
     name: "NEW FACE",
     link: "<%= Rails.application.secrets.url %>?s=fb",
-    picture: 'https://<%= Rails.application.secrets.url %><%=asset_url("sns/facebook_share.jpg") %>',
+    picture: '//<%= Rails.application.secrets.url %><%=asset_url("sns/facebook_share.jpg") %>',
     caption: "OHUI",
     description: text
   };
