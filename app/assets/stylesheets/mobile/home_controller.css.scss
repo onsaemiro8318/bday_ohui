@@ -53,7 +53,7 @@ img {border:0}
 	width: 100%;
 	position:absolute;
 	z-index:2;
-	margin-top:33%;
+	margin-top:112%;
 }
 .img_bg{
 	width: 100%;
@@ -69,7 +69,7 @@ img {border:0}
 	width: 100%;
 }
 .container-btn_gift{
-	padding:0 22%;
+	padding:0 5%;
 }
 .container-btn_gift .btn_gift{
 	width:100%;
@@ -80,14 +80,14 @@ img {border:0}
 .container-view {
 	position:relative;
 	width:100%;
-	padding-top:115%;
-	margin-bottom:14%;
+	padding-top:20%;
+	margin-bottom:6%;
 	.container-product-detail{
 		position:absolute;
 		top:83%;
 		left:5%;
 		a img{
-			width:50%;
+			width:60%;
 		}
 	}
 }
@@ -102,6 +102,7 @@ img {border:0}
 }
 
 .container-sns{
+	margin-top:25%;
 	padding:0 5% ;
 	div{
 		padding:1% 0;
@@ -142,8 +143,8 @@ img {border:0}
 		position:absolute;
 		width: 23%;
 		z-index:2;
-		left:4%;
-		top:73%;
+		left:5%;
+		top:77%;
 		a{
 			display:block;
 			width:100%;
@@ -190,7 +191,7 @@ img {border:0}
 	background: asset-url("mobile/popup/bg_common.png");
 
   .popup-birthday_text-top {
-    margin:30px 0 10px;
+    margin:30px 0 0;
 	text-align:center;
 	img{
 	 width: 55%;
@@ -202,6 +203,7 @@ img {border:0}
 		margin: 0 auto;
 		padding: 3%;
 		background: #fff;
+		display:none;
 		
 		.container-text-top2{
 			text-align:center;	
@@ -253,9 +255,9 @@ img {border:0}
 	}
 	.container-text-guide{
 		text-align:center;
-		padding:10px 0 0;
+		padding:0 0 15px;
 		img{
-			width:65%;
+			width:90%;
 		}
   	
 	}

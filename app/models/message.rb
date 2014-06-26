@@ -7,7 +7,7 @@ class Message < ActiveRecord::Base
     message.send_phone = Rails.application.secrets.send_phone
     message.dest_phone = coupon.user.phone
     message.msg_body = self.send_message(coupon)
-    message.subject = "Skin Birthday"
+    message.subject = "NEW FACE"
     message.send_name = coupon.user.name
     message.sent_at = Time.now + 5.seconds
     message.save
@@ -23,7 +23,7 @@ class Message < ActiveRecord::Base
     message.send_phone = Rails.application.secrets.send_phone
     message.dest_phone = coupon.user.phone 
     message.msg_body = self.send_retention(coupon)
-    message.subject = "Skin Birthday"
+    message.subject = "NEW FACE"
     message.send_name = coupon.user.name
     message.sent_at = Time.now + 5.seconds
     message.save
@@ -41,7 +41,7 @@ class Message < ActiveRecord::Base
     message.send_phone = Rails.application.secrets.send_phone
     message.dest_phone = user.phone 
     message.msg_body = self.send_survey(user)
-    message.subject = "Skin Birthday"
+    message.subject = "NEW FACE"
     message.send_name = user.name
     message.sent_at = Time.now + 2.seconds
     message.save
@@ -139,7 +139,8 @@ https://birthday.su-m37.co.kr/survey?p="+phone+"
 CC쿠션 미니어처 쿠폰 사용 기간이 
 이제 6일 남았어요.
 
-쿠폰 사용기간 : ~ 8월 3일(일)
+쿠폰 사용기간 :
+2014.7.1(화)~2014.8.3(일)
 
 쿠폰받기: //ohui-newface.co.kr/"+coupon.code+"
  
@@ -152,16 +153,14 @@ CC쿠션 미니어처 쿠폰 사용 기간이
   
   def self.send_message(coupon)
     "
-"+coupon.user.name+"님께
-오늘부터 
-새로운 얼굴을
-선물합니다.
-셀 파워 넘버원 
-에센스(35ml)와
-CC쿠션 미니어처를 
-오휘에서 드려요!
+"+coupon.user.name+"님
+오휘를 처음 만난 오늘부터
+아름다워질거예요
 
-쿠폰 사용기간 : ~ 8월 3일(일)
+새로운 NEW FACE를 위해 넘버원 에센스 본품(35ml)과 CC쿠션 미니 에디션을 드립니다.
+
+쿠폰 사용기간 :
+2014.7.1(화)~2014.8.3(일)
 
 쿠폰받기:
 " + Rails.application.secrets.url + "/" + coupon.code + "
