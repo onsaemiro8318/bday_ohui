@@ -82,9 +82,8 @@ $(document).ready(function(){
 	
   $("#kakaostory_share_link").click(function(e){
     e.preventDefault();
-		if(event_open == "running"){
+		if(event_open() == "running"){
 	    kakao.link("story").send({
-
 	      post : "지금 오휘에서\n셀 파워 넘버원 에센스와\nCC쿠션 미니어처를 선물로!!\n\nhttp://bit.ly/ohui_ks",
 	      appid : "new_face",
 	      appver : "1.0",
@@ -196,7 +195,6 @@ function event_open(){
 
 function change_image(){
   $("#product1").click(function(e){
-    console.log("lll");
     e.preventDefault();
     $("#product_image1").attr("src", "<%= asset_path('pc/popup/product/navi_01_on.jpg') %>");
     $("#product_image2").attr("src", '<%= asset_path("pc/popup/product/navi_02_off.jpg") %>');
