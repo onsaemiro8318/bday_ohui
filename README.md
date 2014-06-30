@@ -1,5 +1,8 @@
-오휘
-유주
+
+### 페이지에 탭 추가하는 URL
+http://www.facebook.com/add.php?api_key=[:app_id]&pages=1
+http://www.facebook.com/add.php?api_key=733659556675189&pages=1
+
 ```
 bundle exec cap install
 edit Capfile
