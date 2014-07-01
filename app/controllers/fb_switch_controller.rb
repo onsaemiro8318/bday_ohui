@@ -20,6 +20,7 @@ class FbSwitchController < ApplicationController
       @traffic_log.device = device
       @traffic_log.referer = referer
       @traffic_log.source = source
+      session[:source] = source
       @traffic_log.save
       session[:source] = source
       redirect_to Rails.application.secrets.page_tab_address

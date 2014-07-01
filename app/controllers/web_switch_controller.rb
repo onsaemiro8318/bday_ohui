@@ -19,6 +19,7 @@ class WebSwitchController < ApplicationController
       @traffic_log.device = device
       @traffic_log.referer = referer
       @traffic_log.source = source
+      session[:source] = source
       @traffic_log.save
       session[:source] = source
       redirect_to pc_index_path({s: params[:s]})

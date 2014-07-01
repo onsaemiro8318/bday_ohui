@@ -66,6 +66,8 @@ class Message < ActiveRecord::Base
     start = Time.new
     during_time = 0
     puts res
+    self.cmid = cmid
+    self.save
     return JSON.parse(res)
   end
   
@@ -95,6 +97,8 @@ class Message < ActiveRecord::Base
     start = Time.new
     during_time = 0
     puts res
+    self.cmid = cmid
+    self.save
     return JSON.parse(res)
   end
   
