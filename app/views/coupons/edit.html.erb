@@ -2,6 +2,16 @@
 	<div class="container-img">
 		<%= image_tag("mobile/new/bg_coupon.png") %>
 	</div>
+	<div class="container-img2">
+		<div class="btn">
+			<%= link_to mobile_qna_path, id:"qna_button" do%>
+			<%= image_tag("mobile/new/btn_qna.png", class:"btn_qna") %>
+			<% end %>
+	    </div>
+		<div class="img_bg">
+			<%= image_tag("mobile/new/coupon_bg.png") %>
+		</div>
+	</div>	
 	<div class="bottom">
 		<%= image_tag("mobile/text_coupon_caution2.png", class:"text_coupon_caution2") %>
     <%= link_to update_coupon_path(@coupon.code), id: "coupon_confirm", "data-code" => @coupon.code do %>

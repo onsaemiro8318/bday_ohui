@@ -446,12 +446,24 @@ img {border:0}
 	.container-img img{
 		width:100%;
 	}
+	.container-img2 {
+		position:relative;
+		.btn{
+  		    width:23%;
+			position:absolute;
+			z-index:2;
+			top:45%;
+			right:22%;
+			img{
+				width:100%;
+			}
+		}
+	}
 }
 
 
 #coupon_success .bottom {
 	padding: 5% 0;
-	margin-top:-3%;
 	background: #efefef;
 	text-align:center;
 }
