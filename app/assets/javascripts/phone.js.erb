@@ -1,4 +1,12 @@
 $(document).ready(function(){
+  
+  $("#carousel").owlCarousel({
+		navigation : true, // Show next and prev buttons
+		slideSpeed : 300,
+		paginationSpeed : 400,
+		singleItem:true
+	});
+  
   change_image();
 	$("#info_phone").mask("999-9999-9999");
   $("#info_input_radio");
