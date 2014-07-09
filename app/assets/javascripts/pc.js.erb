@@ -1,5 +1,11 @@
 $(document).ready(function(){	
   change_image();
+  
+  $("#carousel").owlCarousel({
+    items: 1,
+    nav: true
+  });
+  
 	var clip = new ZeroClipboard( $(".copy_html"), {
 		moviePath: "<%= asset_path('ZeroClipboard.swf') %>",
 		swfPath: "<%= asset_path('ZeroClipboard.swf') %>",
@@ -295,14 +301,12 @@ function fb_analytics(){
 
 function change_image(){
   $("#product1").click(function(e){
-    console.log("lll");
     e.preventDefault();
     $("#product_image1").attr("src", "<%= asset_path('pc/popup/product/navi_01_on.jpg') %>");
     $("#product_image2").attr("src", '<%= asset_path("pc/popup/product/navi_02_off.jpg") %>');
     $("#product_image").attr("src", '<%= asset_path("pc/popup/product/img_01.png") %>');
   });
   $("#product2").click(function(e){
-    console.log("lk");
     e.preventDefault();
     $("#product_image1").attr("src", "<%= asset_path('pc/popup/product/navi_01_off.jpg') %>");
     $("#product_image2").attr("src", '<%= asset_path("pc/popup/product/navi_02_on.jpg") %>');

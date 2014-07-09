@@ -1,12 +1,5 @@
 $(document).ready(function(){
-  
-  $("#carousel").owlCarousel({
-		navigation : true, // Show next and prev buttons
-		slideSpeed : 300,
-		paginationSpeed : 400,
-		singleItem:true
-	});
-  
+    
   change_image();
 	$("#info_phone").mask("999-9999-9999");
   $("#info_input_radio");
@@ -87,6 +80,12 @@ $(document).ready(function(){
 			}
 		});
 	});
+  
+  $("#carousel").owlCarousel({
+    items: 1,
+    nav: true
+  });
+  
 	
   $("#kakaostory_share_link").click(function(e){
     e.preventDefault();

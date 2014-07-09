@@ -23,7 +23,10 @@ img {border:0}
 	display: block;
 	text-indent: -9999em;
 }
-* { -webkit-text-size-adjust:none; max-width:100%; }
+* { 
+  -webkit-text-size-adjust:none; 
+  //max-width:100%;
+}
 .container-close {
 	background:#fff;
 	.btn_close {

@@ -41,6 +41,7 @@ Rails.application.routes.draw do
     get 'terms' => 'home#terms'
     get 'product' => 'home#product'
     get 'qna' => 'home#qna'
+    get 'test' => 'home#test'
     resources :users
   end
   

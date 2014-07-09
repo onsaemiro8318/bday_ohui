@@ -17,6 +17,9 @@ class Mobile::HomeController < ApplicationController
     session[:source] = source    
   end
   
+  def test
+  end
+  
   def thank_you
   
   end
