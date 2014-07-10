@@ -47,6 +47,9 @@ img {border:0}
 /*-----------------------------------------------------
 * index.html.erb
 *----------------------------------------------------*/
+.total{
+	background:#fff;
+}
 
 .top{
 	position:relative;
@@ -110,10 +113,18 @@ img {border:0}
 	padding:0 7% ;
 	padding-top:40%;
 	div{
-		padding:0 1%;
 		float:left;
-		width:30%;
+		width:31%;
+		padding-right:2%;
 	}
+	.center{
+		text-align:center;
+		width:32%;
+	}
+	.right{
+		text-align:right;
+	}	
+	
 }
 .container-sns img{
 	width:100%;
@@ -142,6 +153,7 @@ img {border:0}
 .owl-carousel{
 	padding:0 0;
 	position:relative;
+	background:#fff;
 }
 .owl-carousel .owl-stage-outer{
 	padding:0 7%;
