@@ -56,7 +56,7 @@ img {border:0}
 	width: 100%;
 	position:absolute;
 	z-index:2;
-	padding-top:112%;
+	padding-top:43%;
 }
 .img_bg{
 	width: 100%;
@@ -73,9 +73,10 @@ img {border:0}
 }
 .container-btn_gift{
 	padding:0 5%;
+	text-align:center;
 }
 .container-btn_gift .btn_gift{
-	width:100%;
+	width:63%;
 }
 .container-product img{
 	width:100%;
@@ -83,14 +84,15 @@ img {border:0}
 .container-view {
 	position:relative;
 	width:100%;
-	padding-top:20%;
+	padding-top:105%;
 	margin-bottom:6%;
 	.container-product-detail{
 		position:absolute;
-		top:83%;
-		left:5%;
+		top:80%;
+		left:37%;
+		width:25%;
 		a img{
-			width:60%;
+			width:100%;
 		}
 	}
 }
@@ -105,10 +107,12 @@ img {border:0}
 }
 
 .container-sns{
-	margin-top:25%;
-	padding:0 5% ;
+	padding:0 7% ;
+	padding-top:40%;
 	div{
-		padding:1% 0;
+		padding:0 1%;
+		float:left;
+		width:30%;
 	}
 }
 .container-sns img{
@@ -116,27 +120,38 @@ img {border:0}
 }
 
 .container-sum-sns{
-	padding-top:70%;
+	padding:5% 7% !important;
+	position:relative;
 	.left{
-		padding-top:76%;
-		padding-left:5%;
 		float:left;
-		width:30%;
+		width:40%;
 		img{
-			width:47%;
+			width:100%;
 		}
 	}
 	.right{
-		width:42%;
-		padding-top:76%;
+		width:40%;
 		float:right;
-		padding-right:5%;
+		img{
+			width:100%;
+		}
 	}
 }
 
 
-
-
+.owl-carousel{
+	padding:0 0;
+	position:relative;
+}
+.owl-carousel .owl-stage-outer{
+	padding:0 7%;
+}
+.owl-theme .owl-controls{
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:999;
+}
 
 .footer{
 	position:relative;
