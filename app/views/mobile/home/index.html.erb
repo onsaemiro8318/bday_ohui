@@ -1,81 +1,82 @@
-<div class="top">
-	<div class="top_content">
+<div class="total">
+	<div class="top">
+		<div class="top_content">
 		
-		<div class="container-btn_gift clearfix">
-			<%= link_to "#", id:"gift_button" do%>
-			<%= image_tag("mobile/new/btn_birth.png", class:"btn_gift") %>
-			<% end %>
-		</div>	
+			<div class="container-btn_gift clearfix">
+				<%= link_to "#", id:"gift_button" do%>
+				<%= image_tag("mobile/new/btn_birth.png", class:"btn_gift") %>
+				<% end %>
+			</div>	
 			
-		<div class="container-view">
-			<div class="container-product-detail">
-				<a href="/mobile/product">
-					<%= image_tag("mobile/new/btn_view.png", class:"btn_product-detail") %>
-				</a>
-		    </div>
-		</div>
-		
-		<div class="container-sns clearfix">
-			<div>
-				<a href="#" id="kakaotalk_share_link">
-					<%= image_tag("mobile/btn_kakaotalk.png", class:"btn_kakaotalk") %>
-				</a>
-		    </div>
-			<div>
-				<a href="#" id="kakaostory_share_link">
-					<%= image_tag("mobile/btn_kakaostory.png", class:"btn_kakaostory") %>
-				</a>
+			<div class="container-view">
+				<div class="container-product-detail">
+					<a href="/mobile/product">
+						<%= image_tag("mobile/new/btn_view.png", class:"btn_product-detail") %>
+					</a>
+			    </div>
 			</div>
-			<div>
-				<a href="#" id="facebook_share_link">
-					<%= image_tag("mobile/btn_facebook.png", class:"btn_facebook") %>
-				</a>
-			</div>
-	   </div>
 		
-    </div><!--top_content-->
+			<div class="container-sns clearfix">
+				<div>
+					<a href="#" id="kakaotalk_share_link">
+						<%= image_tag("mobile/btn_kakaotalk.png", class:"btn_kakaotalk") %>
+					</a>
+			    </div>
+				<div class="center">
+					<a href="#" id="kakaostory_share_link">
+						<%= image_tag("mobile/btn_kakaostory.png", class:"btn_kakaostory") %>
+					</a>
+				</div>
+				<div class="right">
+					<a href="#" id="facebook_share_link">
+						<%= image_tag("mobile/btn_facebook.png", class:"btn_facebook") %>
+					</a>
+				</div>
+		   </div>
+		
+	    </div><!--top_content-->
 	
-	<div class="img_bg">
-		<%= image_tag("mobile/new/img_bg.png", class:"img_bg") %>
+		<div class="img_bg">
+			<%= image_tag("mobile/new/img_bg.png", class:"img_bg") %>
+		</div>
 	</div>
-</div>
 
 
-<div id="carousel" class="owl-carousel owl-theme">
-	<div class="item">
-	<%= image_tag("mobile/slide/01.png", class:"slide_01") %>
+	<div id="carousel" class="owl-carousel owl-theme">
+		<div class="item">
+		<%= image_tag("mobile/slide/01.png", class:"slide_01") %>
+		</div>
+		<div class="item">
+		<%= image_tag("mobile/slide/02.png", class:"slide_02") %>
+		</div>
+		<div class="item">
+		<%= image_tag("mobile/slide/03.png", class:"slide_03") %>
+		</div>
 	</div>
-	<div class="item">
-	<%= image_tag("mobile/slide/02.png", class:"slide_02") %>
+	<div class="container-sum-sns clearfix">
+		<div class="left">
+			<a href="https://www.facebook.com/ohui.beautifulface?fref=ts" target="_blank">
+				<%= image_tag("mobile/btn_sum_fb.png", class:"btn_sum_fb") %>
+			</a>
+			<a href="http://tinyurl.com/mx47enm" style="display:none;">
+				<%= image_tag("mobile/btn_sum_ks.png", class:"btn_sum_fb") %>
+			</a>
+		</div>
+		<div class="right">
+			<a href="http://m.ohui.co.kr/m/store/store_offline.jsp" target="_blank">
+				<%= image_tag("mobile/btn_sum_store.png", class:"btn_sum_fb") %>
+			</a>
+		</div>
 	</div>
-	<div class="item">
-	<%= image_tag("mobile/slide/03.png", class:"slide_03") %>
-	</div>
-</div>
-
-<div class="container-sum-sns clearfix">
-	<div class="left">
-		<a href="https://www.facebook.com/ohui.beautifulface?fref=ts" target="_blank">
-			<%= image_tag("mobile/btn_sum_fb.png", class:"btn_sum_fb") %>
-		</a>
-		<a href="http://tinyurl.com/mx47enm" style="display:none;">
-			<%= image_tag("mobile/btn_sum_ks.png", class:"btn_sum_fb") %>
-		</a>
-	</div>
-	<div class="right">
-		<a href="http://m.ohui.co.kr/m/store/store_offline.jsp" target="_blank">
-			<%= image_tag("mobile/btn_sum_store.png", class:"btn_sum_fb") %>
-		</a>
-	</div>
-</div>
   
-<div class="footer">
-	<div class="footer_img">
-		<%= link_to mobile_qna_path, id:"qna_button" do%>
-		<%= image_tag("mobile/new/btn_qna.png", class:"btn_qna") %>
-		<% end %>
-	</div>
-	<div class="bottom_bg">
-		<%= image_tag("mobile/new/bottom_bg.jpg", class:"bottom_bg") %>
+	<div class="footer">
+		<div class="footer_img">
+			<%= link_to mobile_qna_path, id:"qna_button" do%>
+			<%= image_tag("mobile/new/btn_qna.png", class:"btn_qna") %>
+			<% end %>
+		</div>
+		<div class="bottom_bg">
+			<%= image_tag("mobile/new/bottom_bg.jpg", class:"bottom_bg") %>
+		</div>
 	</div>
 </div>
