@@ -138,20 +138,17 @@ img {border:0}
 	}
 }
 
+.owl-nav div{
+  margin-top: -50%;
+}
+.owl-nav .owl-next{
+  float: right;
+}
 
-.owl-carousel{
-	padding:0 0;
-	position:relative;
+.owl-nav .owl-prev{
+  float: left;
 }
-.owl-carousel .owl-stage-outer{
-	padding:0 7%;
-}
-.owl-theme .owl-controls{
-	position:absolute;
-	top:0;
-	left:0;
-	z-index:999;
-}
+
 
 .footer{
 	position:relative;
