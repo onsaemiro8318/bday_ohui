@@ -138,9 +138,35 @@ img {border:0}
 	}
 }
 
-.owl-nav div{
-  margin-top: -50%;
+
+.owl-theme .owl-controls{
+  padding: 2%;
 }
+
+.owl-nav div{
+  margin-top: -60%;
+  
+	color: #FFF;
+	display: inline-block;
+	zoom: 1;
+	*display: inline;/*IE7 life-saver */
+	padding: 10px 5px;
+	font-size: 18px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	background: #000;
+	filter: Alpha(Opacity=50);/*IE7 fix*/
+	opacity: 0.5;
+  
+}
+
+.owl-nav div:hover{
+	filter: Alpha(Opacity=100);/*IE7 fix*/
+	opacity: 1;
+	text-decoration: none;
+}
+
 .owl-nav .owl-next{
   float: right;
 }
