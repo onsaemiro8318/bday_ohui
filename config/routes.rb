@@ -42,6 +42,7 @@ Rails.application.routes.draw do
     get 'product' => 'home#product'
     get 'qna' => 'home#qna'
     get 'test' => 'home#test'
+    get 'mdm' => 'home#mdm'
     resources :users
   end
   
