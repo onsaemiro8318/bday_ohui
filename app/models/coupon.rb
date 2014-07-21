@@ -10,17 +10,18 @@ class Coupon < ActiveRecord::Base
   end
   
   def send_retention
-    Message.send_retention_to(self)
+    Message.send_mdm(self)
   end
   
   def self.send_retention_message
-    offset_start = 3626
+    offset_start = 803
     finish = not_used.count
     until offset_start > finish
       offset_start = offset_start + 100
-      not_used.limit(100).offset(offset_start).each do |c|
+      not_used.where("created_at < ?", DateTime.parse("2014-07-10 23:59:59")).limit(100).offset(offset_start).each do |c|
         unless c.user.nil?
-          c.send_retention
+          # puts c.user.name
+           c.send_retention
         end
       end
     end

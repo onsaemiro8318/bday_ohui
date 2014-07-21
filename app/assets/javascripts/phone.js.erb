@@ -16,7 +16,7 @@ $(document).ready(function(){
 		FB.Canvas.setAutoGrow();
 		$("#facebook_share_link").click(function(e){
 			e.preventDefault();
-			if(event_open()=="running"){
+			if(event_finish()=="running"){
 				$.ajax({
 					type: "POST",
 					url: "/viral_actions.json",
@@ -34,14 +34,14 @@ $(document).ready(function(){
 	
 	$("#gift_button").click(function(e){
 		e.preventDefault();
-		if(event_open()=="running"){
+		if(event_finish()=="running"){
 			window.location.href = "/mobile/users/new"; 
 		}
 	});
 	
 	$("#kakaotalk_share_link").click(function(e){
 		e.preventDefault();
-		if(event_open()=="running"){
+		if(event_finish()=="running"){
 			kakao.link("talk").send({
 				msg : "지금 오휘에서\n셀 파워 넘버원 에센스와\nCC쿠션 미니어처를 선물로!!",
 				url : "http://bit.ly/ohui_kt",
@@ -71,12 +71,12 @@ $(document).ready(function(){
 			type: 'get',
 			url: '/coupon_finish.json',
 			success: function (data) {
-				// if(data.result == "finish"){
-				// 	alert("아쉽네요!\n다음엔 조금더 서둘러주세요~");
-				// }else{
+				if(data.result == "finish"){
+			    alert("아쉽네요!\n다음엔 조금더 서둘러주세요~");
+			  }else{
 					confirm("쿠폰을 사용하시겠습니까?");
 					$("#coupon_form").submit();
-				// }
+			   }
 			}
 		});
 	});
@@ -91,7 +91,7 @@ $(document).ready(function(){
 	
   $("#kakaostory_share_link").click(function(e){
     e.preventDefault();
-		if(event_open() == "running"){
+		if(event_finish() == "running"){
 	    kakao.link("story").send({
 	      post : "지금 오휘에서\n셀 파워 넘버원 에센스와\nCC쿠션 미니어처를 선물로!!\n\nhttp://bit.ly/ohui_ks",
 	      appid : "new_face",
@@ -198,6 +198,21 @@ function event_open(){
 	});
 	if(result.responseJSON.result == "not_yet"){
 		alert("이벤트 오픈: 6월 27일");
+	}
+	return result.responseJSON.result;
+}
+
+function event_finish(){
+	var result;
+	result = $.ajax({
+		async: false,
+		type: 'get',
+		url: '/event_finish.json',
+		success: function (data) {
+		}
+	});
+	if(result.responseJSON.result == "finish"){
+		alert("이벤트가 종료되었습니다.\n다음에 참여해주세요!");
 	}
 	return result.responseJSON.result;
 }
