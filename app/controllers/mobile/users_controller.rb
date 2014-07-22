@@ -9,8 +9,6 @@ class Mobile::UsersController < ApplicationController
     user_agent = UserAgent.parse(request.user_agent)
     device = "mobile" if user_agent.mobile?
     @user = User.new(user_params)
-    birthday = "2014-"+params[:user][:birthday_month]+"-"+params[:user][:birthday_day]
-    @user.birthday = DateTime.parse(birthday)
     @user.device = device
     
     Rails.logger.info "@@@session@@@"+session[:source].to_s
