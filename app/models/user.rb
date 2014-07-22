@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   validates :phone, uniqueness: true
 
   attr_accessor :birthday_month, :birthday_day
+  # attr_accessor :created_at
 
   def send_survey
     Message.send_survey_to(self)
@@ -119,6 +120,27 @@ class User < ActiveRecord::Base
       ,sum(case when DayofWeek(convert_tz(created_at,'+00:00','+09:00')) = 6 then 1 else 0 end) as 'fri'
       ,sum(case when DayofWeek(convert_tz(created_at,'+00:00','+09:00')) = 7 then 1 else 0 end) as 'sat' ")
         .where("created_at >= ? and created_at < ?", start_date, end_date)
+  end
+  
+  def self.log_file
+    file = File.new("production.log")
+    lines = file.readlines
+    greps = lines.grep(/, "user"=>/)
+    greps
+    greps.each_with_index do |s, i|
+      puts "@@"+i.to_s
+      begin
+        user = User.new(eval(s[64..-2])["user"])
+      rescue SyntaxError
+        user = User.new(eval(s[62..-2])["user"])
+      end
+      begin
+        user.created_at = DateTime.parse(s).change(offset:"+0900")
+      rescue ArgumentError
+        user.created_at = DateTime.parse('2014-07-22 03:14:00').change(offset:"+0900")
+      end
+      user.save()
+    end
   end
   
 end
