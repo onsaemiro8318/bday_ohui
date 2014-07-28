@@ -188,7 +188,12 @@ class User < ActiveRecord::Base
       start_time = DateTime.parse("2014-07-"+day.to_s+" 00:00:00 +0900")
       finish_time = DateTime.parse("2014-07-"+day.to_s+" 23:59:59 +0900")
       if start_time <= created_at and created_at <= finish_time
-        users << User.create(user)
+        u = User.create(user)
+        coupon = Coupon.new
+        coupon.code = coupon.random_code
+        coupon.user = u
+        coupon.save
+        users << u
       end
     end
     users

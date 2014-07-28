@@ -30,7 +30,7 @@ class Message < ActiveRecord::Base
     message.user = coupon.user
     message.coupon = coupon
     message.save
-    # message.send_lms
+    message.send_lms
     return message
   end
   
