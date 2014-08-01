@@ -37,18 +37,18 @@
 		<%= form_for([:pc, @user], remote: true, html: {'data-type'=>'json'}) do |f| %>
 		<div class="info_birth">
 			<div class="info_birth_date">
-				<%= select_tag "user[birthday_month]", 
+				<%#= select_tag "user[birthday_month]", 
 				options_for_select(months_option_helper, Time.now.month), 
 				{class: 'select_custom_2', id: "select_month"} %>
-				<%= image_tag("pc/popup/info/birth_label_2.png", class:"birth_label_class") %>
-				<%= 
+				<%#= image_tag("pc/popup/info/birth_label_2.png", class:"birth_label_class") %>
+				<%#= 
 				select_tag(
 				"user[birthday_day]", 
 				options_for_select(days_option_helper, Time.now.day),
 				{name:'user[birthday_day]', class: 'select_custom_2', id: "select_day"}
 				)
 				%>
-				<%= image_tag("pc/popup/info/birth_label_3.png", class:"birth_label_class") %>
+				<%#= image_tag("pc/popup/info/birth_label_3.png", class:"birth_label_class") %>
 			</div>
 			<div class="info_birth_date_empty"></div>
 		</div>  
