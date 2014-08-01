@@ -22,7 +22,7 @@ class Admin::DashboardController < ApplicationController
       ,sum(case when device='pc' then 1 else 0 end) as pc_count
       ,sum(case when device='mobile' then 1 else 0 end) as mobile_count")
         .group("date(convert_tz(created_at,'+00:00','+09:00'))")
-        .order("date(created_at)")
+        .order("created_at")
     @user_stats_sum = User.select(
       "sum(case when device='pc' then 1 else 0 end) as pc_count
       ,sum(case when device='mobile' then 1 else 0 end) as mobile_count")
