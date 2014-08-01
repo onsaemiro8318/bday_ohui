@@ -38,6 +38,19 @@ class User < ActiveRecord::Base
     end
   end
   
+  def self.write_excel_0724
+    users = User.joins(:coupon).where(coupons:{status: "not_used"})
+        .where("coupons.created_At < ?",  DateTime.parse("2014-07-10 23:59:59 +0900"))
+    workbook = WriteExcel.new('user_list.xls')
+    worksheet  = workbook.add_worksheet
+    users.each_with_index do |user, i|
+      worksheet.write(i, 0, i+1)
+      worksheet.write(i, 1 , user.name)
+      worksheet.write(i, 2 , user.phone)
+    end
+    workbook.close
+  end
+  
   def self.coupon_used_counts
     result = User.select("
       date(convert_tz(coupons.updated_at,'+00:00','+09:00')) used_date,
